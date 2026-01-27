@@ -4,37 +4,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* APEX RoboTech Design System
-   Clean, professional SaaS aesthetic inspired by Stripe & Calendly
-   Focus: Trust, clarity, conversion
+/* APEX RoboTech Premium Design System
+   Inspired by Linear, Stripe, Vercel
+   Focus: Modern, confident, minimal
 */
 
 @layer base {
   :root {
-    /* Core brand - Deep navy blue for trust & professionalism */
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    /* Core brand - Deep sophisticated dark */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
 
     /* Cards & surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 240 10% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 240 10% 4%;
 
-    /* Primary - Vibrant teal for CTAs & action */
+    /* Primary - Vibrant accent */
     --primary: 173 80% 40%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft blue-gray */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 222 47% 11%;
+    /* Secondary - Cool gray */
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 4%;
 
     /* Muted surfaces */
-    --muted: 210 15% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
 
-    /* Accent - Light teal tint */
+    /* Accent */
     --accent: 173 50% 95%;
     --accent-foreground: 173 80% 30%;
 
@@ -49,24 +49,24 @@
     --warning-foreground: 0 0% 100%;
 
     /* Borders & inputs */
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
     --ring: 173 80% 40%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
 
-    /* Hero section */
-    --hero-gradient-start: 222 47% 11%;
-    --hero-gradient-end: 215 50% 23%;
-    --hero-glow: 173 80% 40%;
+    /* Hero section - Dark gradient */
+    --hero-bg: 240 10% 4%;
+    --hero-text: 0 0% 100%;
+    --hero-text-muted: 240 5% 65%;
 
-    /* Feature cards */
-    --feature-icon-bg: 173 50% 95%;
-    --feature-icon-color: 173 80% 40%;
+    /* Premium/Enterprise styling */
+    --premium-bg: 240 10% 8%;
+    --premium-border: 240 5% 20%;
+    --premium-glow: 173 80% 40%;
 
-    /* Pricing */
-    --pricing-highlight: 173 80% 40%;
-    --pricing-badge: 38 92% 50%;
+    /* Growth accent */
+    --growth-accent: 38 92% 50%;
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -80,47 +80,46 @@
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 20% 98%;
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 20% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 173 80% 45%;
-    --primary-foreground: 222 47% 6%;
+    --primary-foreground: 240 10% 4%;
 
-    --secondary: 217 33% 15%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 33% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
 
     --accent: 173 50% 15%;
     --accent-foreground: 173 80% 60%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
     --success: 152 69% 35%;
     --success-foreground: 0 0% 100%;
 
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
+    --border: 240 5% 18%;
+    --input: 240 5% 18%;
     --ring: 173 80% 45%;
 
-    --hero-gradient-start: 222 47% 4%;
-    --hero-gradient-end: 215 50% 12%;
+    --hero-bg: 240 10% 2%;
 
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 20% 98%;
+    --sidebar-background: 240 10% 4%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 173 80% 45%;
-    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-primary-foreground: 240 10% 4%;
     --sidebar-accent: 173 50% 15%;
     --sidebar-accent-foreground: 173 80% 60%;
-    --sidebar-border: 217 33% 18%;
+    --sidebar-border: 240 5% 18%;
     --sidebar-ring: 173 80% 45%;
   }
 }
@@ -145,44 +144,83 @@
 }
 
 @layer components {
-  /* Hero gradient background */
+  /* Premium Hero gradient background */
   .hero-gradient {
+    background: hsl(var(--hero-bg));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      ellipse at 50% 0%,
+      hsl(var(--primary) / 0.15) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  /* Subtle glow effect */
+  .glow-primary {
+    box-shadow: 0 0 60px -15px hsl(var(--primary) / 0.4);
+  }
+
+  /* Premium card styling */
+  .premium-card {
+    background: hsl(var(--premium-bg));
+    border: 1px solid hsl(var(--premium-border));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
     background: linear-gradient(
-      135deg,
-      hsl(var(--hero-gradient-start)) 0%,
-      hsl(var(--hero-gradient-end)) 50%,
-      hsl(222 47% 15%) 100%
+      90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.5) 50%,
+      transparent 100%
     );
   }
 
-  /* Subtle glow effect for primary elements */
-  .glow-primary {
-    box-shadow: 0 0 40px -10px hsl(var(--hero-glow) / 0.4);
+  /* Growth card accent */
+  .growth-card {
+    border: 2px solid hsl(var(--growth-accent));
+    position: relative;
   }
 
-  /* Feature icon container */
-  .feature-icon {
-    @apply inline-flex items-center justify-center w-12 h-12 rounded-xl;
-    background: hsl(var(--feature-icon-bg));
-    color: hsl(var(--feature-icon-color));
-  }
-
-  /* Pricing card highlight */
-  .pricing-highlight {
-    border: 2px solid hsl(var(--pricing-highlight));
-    box-shadow: 0 8px 40px -12px hsl(var(--pricing-highlight) / 0.25);
-  }
-
-  /* Savings badge */
-  .savings-badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
-    background: hsl(var(--success) / 0.1);
-    color: hsl(var(--success));
+  .growth-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--growth-accent) / 0.1) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+    border-radius: inherit;
   }
 
   /* Section container */
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Large section container for hero */
+  .section-container-lg {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
   }
 
   /* Subtle card hover */
@@ -192,17 +230,7 @@
 
   .card-hover:hover {
     @apply -translate-y-1;
-    box-shadow: 0 20px 40px -20px hsl(var(--foreground) / 0.1);
-  }
-
-  /* Trust badge style */
-  .trust-stat {
-    @apply text-center p-6;
-  }
-
-  .trust-stat-value {
-    @apply text-4xl font-bold;
-    color: hsl(var(--primary));
+    box-shadow: 0 24px 48px -12px hsl(var(--foreground) / 0.12);
   }
 
   /* Navigation link */
@@ -212,6 +240,68 @@
 
   .nav-link-active {
     @apply text-foreground;
+  }
+
+  /* Premium badge */
+  .badge-enterprise {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+    background: hsl(var(--premium-bg));
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.3);
+  }
+
+  /* Growth badge */
+  .badge-growth {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+    background: hsl(var(--growth-accent) / 0.15);
+    color: hsl(var(--growth-accent));
+  }
+
+  /* Savings badge */
+  .savings-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+  }
+
+  /* Feature icon container */
+  .feature-icon {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-xl;
+    background: hsl(var(--accent));
+    color: hsl(var(--primary));
+  }
+
+  /* Pricing highlight */
+  .pricing-highlight {
+    border: 2px solid hsl(var(--primary));
+    box-shadow: 0 8px 40px -12px hsl(var(--primary) / 0.25);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(173 80% 55%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Dashboard mockup container */
+  .dashboard-mock {
+    @apply rounded-xl overflow-hidden;
+    background: linear-gradient(
+      145deg,
+      hsl(240 10% 8%) 0%,
+      hsl(240 10% 12%) 100%
+    );
+    border: 1px solid hsl(240 5% 20%);
+    box-shadow: 
+      0 4px 6px -1px hsl(0 0% 0% / 0.3),
+      0 20px 40px -15px hsl(0 0% 0% / 0.5),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.05);
   }
 }
 
@@ -245,6 +335,20 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  /* Float animation for dashboard */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(-1deg);
     }
   }
 
