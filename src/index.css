@@ -1,96 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* APEX RoboTech Design System
+   Clean, professional SaaS aesthetic inspired by Stripe & Calendly
+   Focus: Trust, clarity, conversion
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core brand - Deep navy blue for trust & professionalism */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
+    /* Cards & surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Vibrant teal for CTAs & action */
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft blue-gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted surfaces */
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Light teal tint */
+    --accent: 173 50% 95%;
+    --accent-foreground: 173 80% 30%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 152 69% 41%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
+    /* Borders & inputs */
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 173 80% 40%;
+
+    --radius: 0.625rem;
+
+    /* Hero section */
+    --hero-gradient-start: 222 47% 11%;
+    --hero-gradient-end: 215 50% 23%;
+    --hero-glow: 173 80% 40%;
+
+    /* Feature cards */
+    --feature-icon-bg: 173 50% 95%;
+    --feature-icon-color: 173 80% 40%;
+
+    /* Pricing */
+    --pricing-highlight: 173 80% 40%;
+    --pricing-badge: 38 92% 50%;
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-primary: 173 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 173 50% 95%;
+    --sidebar-accent-foreground: 173 80% 30%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 173 80% 40%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222 47% 6%;
+    --foreground: 210 20% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 173 80% 45%;
+    --primary-foreground: 222 47% 6%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 173 50% 15%;
+    --accent-foreground: 173 80% 60%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --success: 152 69% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 173 80% 45%;
+
+    --hero-gradient-start: 222 47% 4%;
+    --hero-gradient-end: 215 50% 12%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 173 80% 45%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 173 50% 15%;
+    --sidebar-accent-foreground: 173 80% 60%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 173 80% 45%;
   }
 }
 
@@ -99,7 +130,128 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--hero-gradient-start)) 0%,
+      hsl(var(--hero-gradient-end)) 50%,
+      hsl(222 47% 15%) 100%
+    );
+  }
+
+  /* Subtle glow effect for primary elements */
+  .glow-primary {
+    box-shadow: 0 0 40px -10px hsl(var(--hero-glow) / 0.4);
+  }
+
+  /* Feature icon container */
+  .feature-icon {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-xl;
+    background: hsl(var(--feature-icon-bg));
+    color: hsl(var(--feature-icon-color));
+  }
+
+  /* Pricing card highlight */
+  .pricing-highlight {
+    border: 2px solid hsl(var(--pricing-highlight));
+    box-shadow: 0 8px 40px -12px hsl(var(--pricing-highlight) / 0.25);
+  }
+
+  /* Savings badge */
+  .savings-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--success) / 0.1);
+    color: hsl(var(--success));
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Subtle card hover */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 20px 40px -20px hsl(var(--foreground) / 0.1);
+  }
+
+  /* Trust badge style */
+  .trust-stat {
+    @apply text-center p-6;
+  }
+
+  .trust-stat-value {
+    @apply text-4xl font-bold;
+    color: hsl(var(--primary));
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply text-sm font-medium text-muted-foreground hover:text-foreground transition-colors;
+  }
+
+  .nav-link-active {
+    @apply text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Staggered animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 }
