@@ -1,60 +1,75 @@
-import { MessageSquare, Calendar, ClipboardList, TrendingUp, Coins } from "lucide-react";
+import { PhoneOff, Calendar, Bell, TrendingUp, Coins } from "lucide-react";
 
-const features = [
+const values = [
   {
-    icon: MessageSquare,
-    title: "Answer customers 24/7",
-    description: "On web, WhatsApp, Messenger, and email — never miss a message.",
+    icon: PhoneOff,
+    title: "Replace missed calls",
+    description: "No more unanswered messages or lost leads. Every customer gets a response.",
   },
   {
     icon: Calendar,
-    title: "Automatic booking",
-    description: "Let customers book appointments without calling or waiting.",
+    title: "Let customers book without staff",
+    description: "Self-service booking that works 24/7. No phone tag, no waiting.",
   },
   {
-    icon: ClipboardList,
-    title: "Automate follow-ups",
-    description: "Reminders, internal tasks, and workflows run on autopilot.",
+    icon: Bell,
+    title: "Stop manual follow-ups",
+    description: "Automatic reminders and task tracking. Never forget a customer again.",
   },
   {
     icon: TrendingUp,
-    title: "Grow faster",
-    description: "Affiliates and Google reviews bring more customers automatically.",
+    title: "Grow with affiliates & reviews",
+    description: "Turn happy customers into your marketing team. Automatically.",
   },
   {
     icon: Coins,
-    title: "See money saved",
-    description: "Your dashboard shows exactly how much you save vs hiring staff.",
+    title: "See exactly how much you save",
+    description: "Your dashboard shows real numbers — time saved, costs reduced, growth measured.",
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section className="py-28 lg:py-36 bg-background">
       <div className="section-container">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What APEX Does For Your Business
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Why businesses choose APEX
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+            Replace manual work,<br />not just automate it
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Stop losing customers to slow responses. Start saving time and money today.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Every hour you spend on routine tasks is an hour lost to growing your business.
           </p>
         </div>
 
-        {/* Features grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {features.map((feature, index) => (
+        {/* Values - alternating layout */}
+        <div className="space-y-16 lg:space-y-24">
+          {values.map((value, index) => (
             <div
-              key={feature.title}
-              className="bg-card border border-border rounded-2xl p-6 card-hover"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={value.title}
+              className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-16 ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
             >
-              <div className="feature-icon mb-4">
-                <feature.icon className="h-6 w-6" />
+              {/* Icon */}
+              <div className="flex-shrink-0">
+                <div className="w-20 h-20 rounded-2xl bg-accent flex items-center justify-center">
+                  <value.icon className="h-10 w-10 text-primary" />
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
+              
+              {/* Content */}
+              <div className={`flex-1 text-center lg:text-left ${index % 2 === 1 ? "lg:text-right" : ""}`}>
+                <h3 className="text-2xl md:text-3xl font-semibold mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
+                  {value.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

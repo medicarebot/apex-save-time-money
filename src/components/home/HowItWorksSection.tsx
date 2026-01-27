@@ -1,70 +1,78 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Plug, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    icon: Plug,
     title: "Connect your business",
-    description: "Link your website, calendar, and communication channels. Takes 5 minutes.",
+    description: "Link your website, calendar, and communication channels. Takes about 10 minutes.",
   },
   {
     number: "02",
-    icon: Sparkles,
     title: "Train AI in minutes",
-    description: "No technical skills needed. Just describe your services and preferences.",
+    description: "No technical skills needed. Just answer a few questions about your services.",
   },
   {
     number: "03",
-    icon: TrendingUp,
-    title: "See time & money saved",
-    description: "Your dashboard shows exactly how much you're saving compared to manual work.",
+    title: "See savings immediately",
+    description: "Your dashboard shows exactly how much time and money you save every week.",
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <section className="py-20 lg:py-28 bg-background">
-      <div className="section-container">
+    <section className="py-28 lg:py-36 bg-background relative overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/30 to-transparent pointer-events-none" />
+      
+      <div className="section-container relative">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            How It Works
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Get started in minutes, not months. No technical skills required.
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            How it works
           </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+            Up and running in an afternoon
+          </h2>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
+        <div className="max-w-4xl mx-auto">
           {steps.map((step, index) => (
-            <div key={step.number} className="relative text-center">
-              {/* Connector line (hidden on mobile, visible on md+) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-border" />
-              )}
+            <div
+              key={step.number}
+              className={`flex items-start gap-8 md:gap-12 ${
+                index !== steps.length - 1 ? "mb-16 pb-16 border-b border-border" : ""
+              }`}
+            >
+              {/* Number */}
+              <div className="flex-shrink-0">
+                <span className="text-5xl md:text-6xl font-bold text-muted-foreground/20">
+                  {step.number}
+                </span>
+              </div>
               
-              {/* Step content */}
-              <div className="relative">
-                <div className="inline-flex items-center justify-center w-24 h-24 bg-accent rounded-2xl mb-6 relative z-10">
-                  <step.icon className="h-10 w-10 text-primary" />
-                  <span className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    {step.number}
-                  </span>
-                </div>
-                <h3 className="font-semibold text-xl mb-3">{step.title}</h3>
-                <p className="text-muted-foreground max-w-xs mx-auto">{step.description}</p>
+              {/* Content */}
+              <div className="pt-2">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center">
+        <div className="text-center mt-20">
           <Button size="lg" asChild>
-            <Link to="/how-it-works">See detailed walkthrough</Link>
+            <Link to="/pricing">
+              Get Started Today
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>

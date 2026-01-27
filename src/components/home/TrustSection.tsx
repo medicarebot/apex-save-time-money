@@ -1,74 +1,69 @@
-import { Clock, PhoneOff, CalendarCheck, Coins } from "lucide-react";
+import { Quote } from "lucide-react";
 
-const stats = [
+const testimonials = [
   {
-    icon: Clock,
-    value: "120+",
-    label: "Hours saved per month",
-    description: "Average time saved on customer communication",
+    quote: "We replaced our receptionist with APEX scheduling. Same quality bookings, a fraction of the cost.",
+    author: "Dr. Anna Kovács",
+    role: "Dental Clinic Owner",
   },
   {
-    icon: PhoneOff,
-    value: "75%",
-    label: "Fewer missed calls",
-    description: "AI answers when you can't",
-  },
-  {
-    icon: CalendarCheck,
-    value: "3x",
-    label: "More bookings",
-    description: "24/7 availability means more appointments",
-  },
-  {
-    icon: Coins,
-    value: "500K+ Ft",
-    label: "Saved monthly",
-    description: "Average savings vs hiring staff",
+    quote: "Our stylists used to spend hours on the phone. Now they focus on clients while APEX handles bookings.",
+    author: "Márk Tóth",
+    role: "Salon Director",
   },
 ];
 
 export function TrustSection() {
   return (
-    <section className="py-20 lg:py-28 bg-foreground text-background">
+    <section className="py-28 lg:py-36 bg-muted/30">
       <div className="section-container">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-background">
-            Real Results, Real Savings
-          </h2>
-          <p className="text-lg text-background/70">
-            Businesses using APEX see measurable improvements from day one.
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            Results that matter
           </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+            Real savings, real businesses
+          </h2>
         </div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-background/10 rounded-xl mb-4">
-                <stat.icon className="h-7 w-7 text-primary" />
+        {/* Testimonials */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-card border border-border rounded-2xl p-8 relative"
+            >
+              <Quote className="h-8 w-8 text-primary/20 absolute top-8 right-8" />
+              <p className="text-lg mb-6 leading-relaxed">
+                "{testimonial.quote}"
+              </p>
+              <div>
+                <p className="font-semibold">{testimonial.author}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
               </div>
-              <p className="text-4xl font-bold text-background mb-2">{stat.value}</p>
-              <p className="font-medium text-background mb-1">{stat.label}</p>
-              <p className="text-sm text-background/60">{stat.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Testimonial preview */}
-        <div className="mt-16 pt-16 border-t border-background/10">
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-xl md:text-2xl text-background/90 italic mb-6">
-              "We cut our phone time in half and doubled our bookings. The dashboard showing our savings is incredible — my team finally sees the ROI."
-            </blockquote>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 bg-background/20 rounded-full flex items-center justify-center">
-                <span className="text-lg font-bold text-background">MK</span>
-              </div>
-              <div className="text-left">
-                <p className="font-medium text-background">Márta K.</p>
-                <p className="text-sm text-background/60">Owner, Budapest Hair Studio</p>
-              </div>
+        {/* Trust metrics */}
+        <div className="mt-20 pt-20 border-t border-border">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-foreground">500+</p>
+              <p className="text-muted-foreground mt-2">Businesses using APEX</p>
+            </div>
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-foreground">2M+</p>
+              <p className="text-muted-foreground mt-2">Customer conversations</p>
+            </div>
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-foreground">150K+</p>
+              <p className="text-muted-foreground mt-2">Hours saved monthly</p>
+            </div>
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-foreground">98%</p>
+              <p className="text-muted-foreground mt-2">Customer satisfaction</p>
             </div>
           </div>
         </div>
