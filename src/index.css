@@ -194,23 +194,30 @@
     );
   }
 
-  /* Growth card accent */
-  .growth-card {
-    border: 2px solid hsl(var(--growth-accent));
-    position: relative;
-  }
-
-  .growth-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+  /* Enterprise section - premium dark styling without promo feel */
+  .enterprise-section {
     background: linear-gradient(
       135deg,
-      hsl(var(--growth-accent) / 0.1) 0%,
-      transparent 50%
+      hsl(240 10% 6%) 0%,
+      hsl(240 10% 10%) 100%
     );
-    pointer-events: none;
-    border-radius: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .enterprise-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.3) 50%,
+      transparent 100%
+    );
   }
 
   /* Section container */
@@ -242,26 +249,24 @@
     @apply text-foreground;
   }
 
-  /* Premium badge */
+  /* Premium badge - minimal styling */
   .badge-enterprise {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
-    background: hsl(var(--premium-bg));
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    background: hsl(var(--primary) / 0.1);
     color: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary) / 0.3);
   }
 
-  /* Growth badge */
-  .badge-growth {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
-    background: hsl(var(--growth-accent) / 0.15);
-    color: hsl(var(--growth-accent));
+  /* Feature icon container */
+  .feature-icon {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-xl;
+    background: hsl(var(--accent));
+    color: hsl(var(--primary));
   }
 
-  /* Savings badge */
-  .savings-badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
-    background: hsl(var(--success) / 0.1);
-    color: hsl(var(--success));
+  /* Pricing highlight */
+  .pricing-highlight {
+    border: 2px solid hsl(var(--primary));
+    box-shadow: 0 8px 40px -12px hsl(var(--primary) / 0.25);
   }
 
   /* Feature icon container */

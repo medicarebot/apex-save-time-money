@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MessageSquare, ClipboardCheck, Rocket, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, MessageSquare, ClipboardCheck, Rocket, Users } from "lucide-react";
 
 const standardModules = [
   {
@@ -26,16 +26,16 @@ const standardModules = [
 const growthModule = {
   icon: Rocket,
   title: "Growth Pack",
-  tagline: "Grow without hiring",
-  description: "Turn customers into affiliates. Automate review collection. Scale your marketing with zero headcount.",
+  tagline: "Turn happy customers into your growth engine",
+  description: "Grow through reviews, referrals, and affiliates. Build your reputation automatically and let satisfied customers bring in new business.",
   href: "/product/growth",
 };
 
 const enterpriseModule = {
   icon: Users,
   title: "Digital Board",
-  tagline: "Enterprise / Invite-only",
-  description: "AI C-level advisors that support leadership decisions. Company-wide visibility and strategic insights.",
+  tagline: "For enterprise leadership",
+  description: "AI advisors that help leadership teams see clearly, decide faster, and align the business.",
   href: "/product/digital-board",
 };
 
@@ -56,8 +56,13 @@ export function ModulesSection() {
           </p>
         </div>
 
+        {/* Core Modules Header */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Core Modules</h3>
+        </div>
+
         {/* Standard Modules */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {standardModules.map((module) => (
             <Link
               key={module.title}
@@ -78,69 +83,70 @@ export function ModulesSection() {
           ))}
         </div>
 
-        {/* Growth Module - Highlighted */}
-        <div className="mb-12">
+        {/* Growth Section */}
+        <div className="mb-20">
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Growth</h3>
+          </div>
           <Link
             to={growthModule.href}
-            className="group growth-card block bg-card rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="group block bg-card border border-border rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-foreground/5"
           >
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-xl bg-warning/10 flex items-center justify-center">
-                  <growthModule.icon className="h-8 w-8 text-warning" />
+                <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center">
+                  <growthModule.icon className="h-8 w-8 text-primary" />
                 </div>
               </div>
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="font-semibold text-2xl group-hover:text-primary transition-colors">
-                    {growthModule.title}
-                  </h3>
-                  <span className="badge-growth">
-                    <Sparkles className="h-3 w-3" />
-                    {growthModule.tagline}
-                  </span>
-                </div>
+                <h3 className="font-semibold text-2xl mb-2 group-hover:text-primary transition-colors">
+                  {growthModule.title}
+                </h3>
+                <p className="text-primary font-medium text-sm mb-2">
+                  {growthModule.tagline}
+                </p>
                 <p className="text-lg text-muted-foreground max-w-2xl">
                   {growthModule.description}
                 </p>
               </div>
               <div className="flex-shrink-0">
                 <Button variant="outline" className="group-hover:border-primary group-hover:text-primary">
-                  Explore <ArrowRight className="ml-2 h-4 w-4" />
+                  View Growth Pack <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
           </Link>
         </div>
 
-        {/* Enterprise Module - Premium Dark */}
+        {/* Enterprise Section */}
         <div>
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Enterprise</h3>
+          </div>
           <Link
             to={enterpriseModule.href}
-            className="group premium-card block rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1"
+            className="group enterprise-section block rounded-2xl p-8 md:p-12 transition-all duration-300 hover:-translate-y-1"
           >
             <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
-                  <enterpriseModule.icon className="h-8 w-8 text-primary" />
+                <div className="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                  <enterpriseModule.icon className="h-8 w-8 text-white" />
                 </div>
               </div>
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <h3 className="font-semibold text-2xl text-white group-hover:text-primary transition-colors">
-                    {enterpriseModule.title}
-                  </h3>
-                  <span className="badge-enterprise">
-                    {enterpriseModule.tagline}
-                  </span>
-                </div>
-                <p className="text-lg text-white/60 max-w-2xl">
+                <h3 className="font-semibold text-2xl text-white mb-2 group-hover:text-primary transition-colors">
+                  {enterpriseModule.title}
+                </h3>
+                <p className="text-white/50 text-sm mb-2">
+                  {enterpriseModule.tagline}
+                </p>
+                <p className="text-lg text-white/70 max-w-2xl">
                   {enterpriseModule.description}
                 </p>
               </div>
               <div className="flex-shrink-0">
                 <Button variant="heroOutline" className="border-white/20 text-white hover:bg-white/10 hover:border-white/30">
-                  Request Demo <ArrowRight className="ml-2 h-4 w-4" />
+                  Request Executive Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>

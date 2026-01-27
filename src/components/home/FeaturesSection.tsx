@@ -1,30 +1,30 @@
-import { PhoneOff, Calendar, Bell, TrendingUp, Coins } from "lucide-react";
+import { Headphones, Calendar, RefreshCw, TrendingUp, BarChart3 } from "lucide-react";
 
 const values = [
   {
-    icon: PhoneOff,
-    title: "Replace missed calls",
-    description: "No more unanswered messages or lost leads. Every customer gets a response.",
+    icon: Headphones,
+    title: "Reduce communication overload",
+    description: "Your team stays focused on complex work while APEX handles routine questions and requests.",
   },
   {
     icon: Calendar,
     title: "Let customers book without staff",
-    description: "Self-service booking that works 24/7. No phone tag, no waiting.",
+    description: "Self-service booking that works 24/7. No phone tag, no waiting — just seamless scheduling.",
   },
   {
-    icon: Bell,
-    title: "Stop manual follow-ups",
-    description: "Automatic reminders and task tracking. Never forget a customer again.",
+    icon: RefreshCw,
+    title: "Eliminate repetitive follow-ups",
+    description: "Automatic reminders and task tracking free your team to focus on what matters most.",
   },
   {
     icon: TrendingUp,
-    title: "Grow with affiliates & reviews",
-    description: "Turn happy customers into your marketing team. Automatically.",
+    title: "Scale without burning out your team",
+    description: "Grow your customer base with reviews, referrals, and affiliates — no extra headcount needed.",
   },
   {
-    icon: Coins,
-    title: "See exactly how much you save",
-    description: "Your dashboard shows real numbers — time saved, costs reduced, growth measured.",
+    icon: BarChart3,
+    title: "See your efficiency gains clearly",
+    description: "Your dashboard shows real numbers — time saved, response improvements, and business growth.",
   },
 ];
 
@@ -38,10 +38,10 @@ export function FeaturesSection() {
             Why businesses choose APEX
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-            Replace manual work,<br />not just automate it
+            Let your team focus on what<br />humans do best
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every hour you spend on routine tasks is an hour lost to growing your business.
+            APEX handles the routine work, so your people can focus on customers, creativity, and growth.
           </p>
         </div>
 

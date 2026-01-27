@@ -2,12 +2,12 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "We replaced our receptionist with APEX scheduling. Same quality bookings, a fraction of the cost.",
+    quote: "Our front desk team was overwhelmed. APEX now handles routine questions so they can focus on patients in the office.",
     author: "Dr. Anna Kovács",
     role: "Dental Clinic Owner",
   },
   {
-    quote: "Our stylists used to spend hours on the phone. Now they focus on clients while APEX handles bookings.",
+    quote: "We used to lose customers waiting on hold. Now bookings happen automatically, and our stylists focus on what they do best.",
     author: "Márk Tóth",
     role: "Salon Director",
   },
@@ -23,7 +23,7 @@ export function TrustSection() {
             Results that matter
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-            Real savings, real businesses
+            Teams working smarter, not harder
           </h2>
         </div>
 
