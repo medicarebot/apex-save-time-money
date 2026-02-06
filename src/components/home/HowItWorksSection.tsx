@@ -1,39 +1,41 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    title: "Connect your business",
-    description: "Link your website, calendar, and communication channels. Takes about 10 minutes.",
+    title: "Connect in 15 minutes",
+    description: "Link your website, calendar, and communication channels. Our guided setup makes it effortless.",
+    checks: ["No coding required", "Works with your existing tools"],
   },
   {
     number: "02",
-    title: "Train AI in minutes",
-    description: "No technical skills needed. Just answer a few questions about your services.",
+    title: "Train your AI",
+    description: "Answer a few questions about your business. APEX learns your services, policies, and tone of voice.",
+    checks: ["Custom to your business", "Sounds like you, not a robot"],
   },
   {
     number: "03",
-    title: "See savings immediately",
-    description: "Your dashboard shows exactly how much time and money you save every week.",
+    title: "See results immediately",
+    description: "Watch your dashboard as APEX handles conversations, books appointments, and frees up your team.",
+    checks: ["Real-time ROI tracking", "Full visibility into every interaction"],
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <section className="py-28 lg:py-36 bg-background relative overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/30 to-transparent pointer-events-none" />
-      
-      <div className="section-container relative">
+    <section className="py-24 lg:py-32 bg-background">
+      <div className="section-container">
         {/* Section header */}
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
             How it works
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-            Up and running in an afternoon
+            Live in an afternoon.
+            <br />
+            <span className="text-muted-foreground">ROI in a week.</span>
           </h2>
         </div>
 
@@ -42,36 +44,44 @@ export function HowItWorksSection() {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className={`flex items-start gap-8 md:gap-12 ${
-                index !== steps.length - 1 ? "mb-16 pb-16 border-b border-border" : ""
+              className={`relative flex gap-8 lg:gap-12 ${
+                index !== steps.length - 1 ? "pb-12 mb-12 border-b border-border" : ""
               }`}
             >
               {/* Number */}
-              <div className="flex-shrink-0">
-                <span className="text-5xl md:text-6xl font-bold text-muted-foreground/20">
+              <div className="flex-shrink-0 w-16 lg:w-20">
+                <span className="text-4xl lg:text-5xl font-bold text-muted-foreground/20">
                   {step.number}
                 </span>
               </div>
               
               {/* Content */}
-              <div className="pt-2">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-3">
+              <div className="flex-1 pt-1">
+                <h3 className="text-xl lg:text-2xl font-semibold mb-3">
                   {step.title}
                 </h3>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-muted-foreground mb-4 max-w-lg">
                   {step.description}
                 </p>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  {step.checks.map((check) => (
+                    <div key={check} className="flex items-center gap-2 text-sm">
+                      <Check className="h-4 w-4 text-primary" />
+                      <span className="text-muted-foreground">{check}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-20">
-          <Button size="lg" asChild>
+        <div className="text-center mt-16">
+          <Button size="lg" asChild className="group">
             <Link to="/pricing">
-              Get Started Today
-              <ArrowRight className="ml-2 h-4 w-4" />
+              Start Your Free Trial
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
