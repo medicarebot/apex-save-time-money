@@ -6,20 +6,20 @@ const roiStats = [
   {
     icon: Clock,
     value: "47 hours",
-    label: "saved per week on average",
-    description: "That's a full-time employee's worth of admin work, automated.",
+    label: "recovered per week",
+    description: "Time your team gets back for high-value work and patient care.",
   },
   {
     icon: DollarSign,
     value: "7-14 days",
-    label: "to recover your investment",
-    description: "Most customers see positive ROI within the first two weeks.",
+    label: "to see positive ROI",
+    description: "Most customers recover their investment within the first two weeks.",
   },
   {
     icon: Users,
     value: "1,247",
     label: "conversations handled monthly",
-    description: "Per business average. No extra headcount needed.",
+    description: "Per business average—without adding to your team's workload.",
   },
   {
     icon: TrendingUp,

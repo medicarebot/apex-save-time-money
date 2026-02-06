@@ -5,9 +5,9 @@ import logoLight from "@/assets/logo-light.png";
 
 const stats = [
   { value: "2,400+", label: "Active businesses" },
-  { value: "47hrs", label: "Saved weekly avg" },
+  { value: "47hrs", label: "Recovered weekly" },
   { value: "<2s", label: "Response time" },
-  { value: "98%", label: "Customer satisfaction" },
+  { value: "98%", label: "Team satisfaction" },
 ];
 
 const trustedBy = [
@@ -29,17 +29,17 @@ export function HeroSection() {
             <span className="text-sm text-white/80">Trusted by 2,400+ service businesses</span>
           </div>
 
-          {/* Main headline - Bold/Contrarian Version */}
+          {/* Main headline - Human-First Version */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-            You don't need more staff.
+            Give your team superpowers.
             <br />
-            <span className="gradient-text">You need APEX.</span>
+            <span className="gradient-text">Not more busywork.</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-            The AI platform that handles 1,000+ customer conversations, books appointments 24/7, 
-            and manages operations—while your team focuses on what actually grows the business.
+            APEX handles the repetitive tasks—conversations, scheduling, follow-ups—so your team 
+            can focus on the high-value work that actually grows your business.
           </p>
 
           {/* Value props */}

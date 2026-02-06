@@ -11,15 +11,15 @@ const steps = [
   },
   {
     number: "02",
-    title: "Train your AI",
+    title: "Train your AI assistant",
     description: "Answer a few questions about your business. APEX learns your services, policies, and tone of voice.",
-    checks: ["Custom to your business", "Sounds like you, not a robot"],
+    checks: ["Custom to your business", "Human handover built-in"],
   },
   {
     number: "03",
-    title: "See results immediately",
-    description: "Watch your dashboard as APEX handles conversations, books appointments, and frees up your team.",
-    checks: ["Real-time ROI tracking", "Full visibility into every interaction"],
+    title: "Your team gets time back",
+    description: "Watch your dashboard as APEX handles routine tasks—while your team stays in control of what matters.",
+    checks: ["Full visibility & oversight", "Escalation to humans anytime"],
   },
 ];
 

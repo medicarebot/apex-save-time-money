@@ -13,15 +13,15 @@ export function FinalCTASection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-8">
             <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm text-white/80">Join 2,400+ businesses saving 47+ hours weekly</span>
+            <span className="text-sm text-white/80">Join 2,400+ teams reclaiming 47+ hours weekly</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-            Ready to stop drowning in admin?
+            Ready to give your team time back?
           </h2>
           <p className="text-lg md:text-xl text-background/60 mb-10 max-w-xl mx-auto">
             Start your free trial today. No credit card required. 
-            See results in your first week.
+            Your team will thank you.
           </p>
 
           {/* Dual CTAs */}
