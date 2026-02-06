@@ -1,20 +1,26 @@
 import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
-import { FeaturesSection } from "@/components/home/FeaturesSection";
+import { ProblemSolutionSection } from "@/components/home/ProblemSolutionSection";
+import { DifferentiationSection } from "@/components/home/DifferentiationSection";
 import { ModulesSection } from "@/components/home/ModulesSection";
+import { IndustrySolutionsSection } from "@/components/home/IndustrySolutionsSection";
+import { ROISection } from "@/components/home/ROISection";
 import { HowItWorksSection } from "@/components/home/HowItWorksSection";
-import { TrustSection } from "@/components/home/TrustSection";
-import { CTASection } from "@/components/home/CTASection";
+import { EnterpriseSection } from "@/components/home/EnterpriseSection";
+import { FinalCTASection } from "@/components/home/FinalCTASection";
 
 const Index = () => {
   return (
     <Layout>
       <HeroSection />
-      <FeaturesSection />
+      <ProblemSolutionSection />
+      <DifferentiationSection />
       <ModulesSection />
+      <IndustrySolutionsSection />
+      <ROISection />
       <HowItWorksSection />
-      <TrustSection />
-      <CTASection />
+      <EnterpriseSection />
+      <FinalCTASection />
     </Layout>
   );
 };

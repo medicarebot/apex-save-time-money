@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,11 +10,20 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import logoDark from "@/assets/logo-dark.png";
 
 const productItems = [
-  { name: "Smart Scheduling", href: "/product/scheduling", description: "AI-powered appointment booking" },
-  { name: "Customer Chat & Sales", href: "/product/chat", description: "24/7 AI responses across channels" },
+  { name: "Customer Chat & Sales", href: "/product/chat", description: "AI-powered responses across all channels" },
+  { name: "Smart Scheduling", href: "/product/scheduling", description: "24/7 self-service booking" },
   { name: "Operations & Tasks", href: "/product/operations", description: "Automate internal workflows" },
+  { name: "Growth Pack", href: "/product/growth", description: "Reviews, referrals, and reputation" },
+];
+
+const solutionItems = [
+  { name: "Salons & Spas", href: "/solutions/salons" },
+  { name: "Clinics & Healthcare", href: "/solutions/healthcare" },
+  { name: "Real Estate", href: "/solutions/real-estate" },
+  { name: "Service Businesses", href: "/solutions/services" },
 ];
 
 export function Header() {
@@ -29,11 +38,8 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex lg:flex-1">
-            <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">A</span>
-              </div>
-              <span className="font-bold text-xl text-foreground">APEX RoboTech</span>
+            <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3">
+              <img src={logoDark} alt="APEX RoboTech" className="h-8 w-auto" />
             </Link>
           </div>
 
@@ -83,14 +89,27 @@ export function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* Growth */}
+                {/* Solutions dropdown */}
                 <NavigationMenuItem>
-                  <Link
-                    to="/product/growth"
-                    className={`nav-link px-4 py-2 ${isActive("/product/growth") ? "nav-link-active" : ""}`}
-                  >
-                    Growth
-                  </Link>
+                  <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                    Solutions
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[200px] gap-1 p-4">
+                      {solutionItems.map((item) => (
+                        <li key={item.name}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={item.href}
+                              className="block select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-sm font-medium"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* Enterprise */}
@@ -100,16 +119,6 @@ export function Header() {
                     className={`nav-link px-4 py-2 ${isActive("/product/digital-board") ? "nav-link-active" : ""}`}
                   >
                     Enterprise
-                  </Link>
-                </NavigationMenuItem>
-
-                {/* Solutions */}
-                <NavigationMenuItem>
-                  <Link
-                    to="/solutions"
-                    className={`nav-link px-4 py-2 ${isActive("/solutions") ? "nav-link-active" : ""}`}
-                  >
-                    Solutions
                   </Link>
                 </NavigationMenuItem>
 
@@ -127,12 +136,12 @@ export function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-            <Button variant="ghost" asChild>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
+            <Button variant="ghost" size="sm" asChild>
               <Link to="/login">Log in</Link>
             </Button>
-            <Button asChild>
-              <Link to="/pricing">Start Now</Link>
+            <Button size="sm" asChild>
+              <Link to="/pricing">Start Free Trial</Link>
             </Button>
           </div>
         </div>
@@ -155,18 +164,22 @@ export function Header() {
                   </Link>
                 ))}
               </div>
+
+              {/* Solutions section */}
+              <div className="px-3 py-2">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Solutions</p>
+                {solutionItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block px-3 py-2 rounded-lg text-sm text-muted-foreground hover:bg-secondary"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
               
-              <Link
-                to="/product/growth"
-                className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                  isActive("/product/growth")
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:bg-secondary"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Growth
-              </Link>
               <Link
                 to="/product/digital-board"
                 className={`block px-3 py-2 rounded-lg text-base font-medium ${
@@ -177,17 +190,6 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Enterprise
-              </Link>
-              <Link
-                to="/solutions"
-                className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                  isActive("/solutions")
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:bg-secondary"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Solutions
               </Link>
               <Link
                 to="/pricing"
@@ -206,7 +208,7 @@ export function Header() {
                   <Link to="/login">Log in</Link>
                 </Button>
                 <Button className="w-full" asChild>
-                  <Link to="/pricing">Start Now</Link>
+                  <Link to="/pricing">Start Free Trial</Link>
                 </Button>
               </div>
             </div>

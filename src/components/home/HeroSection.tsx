@@ -1,117 +1,106 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Clock, Calendar, BarChart3, Heart } from "lucide-react";
+import { ArrowRight, Play, Check, Zap, Clock, Users } from "lucide-react";
+import logoLight from "@/assets/logo-light.png";
 
-const valueProofs = [
-  { icon: Clock, text: "Faster responses" },
-  { icon: Calendar, text: "More bookings" },
-  { icon: BarChart3, text: "Clear ROI dashboard" },
-  { icon: Heart, text: "Less operational stress" },
+const stats = [
+  { value: "2,400+", label: "Active businesses" },
+  { value: "47hrs", label: "Saved weekly avg" },
+  { value: "<2s", label: "Response time" },
+  { value: "98%", label: "Customer satisfaction" },
+];
+
+const trustedBy = [
+  "Premium Dental",
+  "Urban Salon Group",
+  "MedCare Clinics",
+  "Elite Properties",
+  "ServicePro Network",
 ];
 
 export function HeroSection() {
   return (
-    <section className="hero-gradient relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
-      <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-              Automate customer communication, bookings, and operations — 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70"> without losing the human touch.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/70 mb-8 max-w-xl mx-auto lg:mx-0">
-              APEX handles repetitive conversations, scheduling, and follow-ups so your team can focus on customers, growth, and quality.
-            </p>
+    <section className="hero-gradient relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
+      <div className="section-container-lg">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-8">
+            <Zap className="h-4 w-4 text-primary" />
+            <span className="text-sm text-white/80">Trusted by 2,400+ service businesses</span>
+          </div>
 
-            {/* Value proof points */}
-            <div className="grid grid-cols-2 gap-4 mb-10 max-w-md mx-auto lg:mx-0">
-              {valueProofs.map((proof) => (
-                <div key={proof.text} className="flex items-center gap-2 text-white/80">
-                  <proof.icon className="h-4 w-4 text-primary flex-shrink-0" />
-                  <span className="text-sm">{proof.text}</span>
-                </div>
-              ))}
+          {/* Main headline - Bold/Contrarian Version */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
+            You don't need more staff.
+            <br />
+            <span className="gradient-text">You need APEX.</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
+            The AI platform that handles 1,000+ customer conversations, books appointments 24/7, 
+            and manages operations—while your team focuses on what actually grows the business.
+          </p>
+
+          {/* Value props */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10">
+            <div className="flex items-center gap-2 text-white/70">
+              <Check className="h-4 w-4 text-primary" />
+              <span className="text-sm">No credit card required</span>
             </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" variant="hero" asChild>
-                <Link to="/pricing">
-                  Start Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="heroOutline" asChild>
-                <Link to="/how-it-works">
-                  <Play className="mr-2 h-4 w-4" />
-                  See How It Works
-                </Link>
-              </Button>
+            <div className="flex items-center gap-2 text-white/70">
+              <Check className="h-4 w-4 text-primary" />
+              <span className="text-sm">Setup in 15 minutes</span>
+            </div>
+            <div className="flex items-center gap-2 text-white/70">
+              <Check className="h-4 w-4 text-primary" />
+              <span className="text-sm">ROI in 7 days</span>
             </div>
           </div>
 
-          {/* Right - Dashboard mockup */}
-          <div className="relative">
-            <div className="dashboard-mock rounded-2xl p-6 md:p-8">
-              {/* Mock dashboard header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    <BarChart3 className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-white font-medium">This Month</p>
-                    <p className="text-white/50 text-sm">Team efficiency overview</p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-2xl font-bold text-white">47 hrs</p>
-                  <p className="text-primary text-sm">saved this week</p>
-                </div>
-              </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Button size="xl" variant="hero" asChild className="group">
+              <Link to="/pricing">
+                Start Free Trial
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button size="xl" variant="heroOutline" asChild>
+              <Link to="/contact">
+                <Play className="mr-2 h-4 w-4" />
+                Book a Demo
+              </Link>
+            </Button>
+          </div>
 
-              {/* Mock metrics */}
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-white/50 text-xs mb-1">Conversations</p>
-                  <p className="text-xl font-bold text-white">1,247</p>
-                  <p className="text-primary text-xs">handled automatically</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-white/50 text-xs mb-1">Bookings</p>
-                  <p className="text-xl font-bold text-white">89</p>
-                  <p className="text-primary text-xs">this week</p>
-                </div>
-                <div className="bg-white/5 rounded-xl p-4">
-                  <p className="text-white/50 text-xs mb-1">Response time</p>
-                  <p className="text-xl font-bold text-white">&lt;2s</p>
-                  <p className="text-primary text-xs">average</p>
-                </div>
+          {/* Stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-t border-b border-white/10">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
+                <p className="text-sm text-white/50">{stat.label}</p>
               </div>
-
-              {/* Mock activity */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <p className="text-white/50 text-xs mb-3">Recent activity</p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <p className="text-white/80 text-sm">New booking confirmed — Dental cleaning</p>
-                    <span className="text-white/40 text-xs ml-auto">2m ago</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <p className="text-white/80 text-sm">Customer inquiry resolved</p>
-                    <span className="text-white/40 text-xs ml-auto">5m ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative glow */}
-            <div className="absolute -inset-4 bg-primary/20 blur-3xl rounded-full -z-10 opacity-30"></div>
+            ))}
           </div>
         </div>
+      </div>
+
+      {/* Trusted by logos */}
+      <div className="section-container-lg mt-16">
+        <p className="text-center text-sm text-white/40 mb-6">Trusted by industry leaders</p>
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4">
+          {trustedBy.map((company) => (
+            <span key={company} className="text-white/30 font-medium text-sm tracking-wide">
+              {company}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none">
+        <div className="absolute inset-0 bg-primary/10 blur-[120px] rounded-full opacity-50" />
       </div>
     </section>
   );
