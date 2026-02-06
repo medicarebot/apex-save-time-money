@@ -136,7 +136,7 @@ export function AIChatWidget() {
         </div>
 
         {/* Messages */}
-        <div className="h-[320px] overflow-y-auto p-4 space-y-4 bg-background/50">
+        <div className="h-[280px] overflow-y-auto p-4 space-y-4 bg-background/50">
           {messages.map((message) => (
             <div
               key={message.id}

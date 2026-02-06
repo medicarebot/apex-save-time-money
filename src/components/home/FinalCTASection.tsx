@@ -4,11 +4,11 @@ import { ArrowRight, MessageSquare, Sparkles } from "lucide-react";
 
 export function FinalCTASection() {
   return (
-    <section className="py-24 lg:py-32 bg-foreground text-background relative overflow-hidden">
+    <section className="py-24 lg:py-32 enterprise-section relative overflow-hidden">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-transparent pointer-events-none" />
       
-      <div className="section-container relative">
+      <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-8">
@@ -16,10 +16,10 @@ export function FinalCTASection() {
             <span className="text-sm text-white/80">Start a conversation—literally</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
             Ready to see what APEX can do for you?
           </h2>
-          <p className="text-lg md:text-xl text-background/60 mb-10 max-w-xl mx-auto">
+          <p className="text-lg md:text-xl text-white/60 mb-10 max-w-xl mx-auto">
             Talk to our AI right now—or book a demo with our team. 
             Either way, you'll see results within minutes.
           </p>
@@ -37,9 +37,8 @@ export function FinalCTASection() {
               </Link>
             </Button>
             <Button 
-              variant="outline" 
               size="xl" 
-              className="border-background/20 text-background hover:bg-background/10"
+              className="bg-white/10 border border-white/20 text-white hover:bg-white/20"
               asChild
             >
               <Link to="/contact">
@@ -50,7 +49,7 @@ export function FinalCTASection() {
           </div>
 
           {/* Trust signals */}
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-background/40">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-white/50">
             <span>✓ No setup fees</span>
             <span>✓ Live in 15 minutes</span>
             <span>✓ Human support always available</span>
