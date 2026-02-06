@@ -1,25 +1,35 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, MessageSquare, Settings, Users, CheckCircle } from "lucide-react";
 
 const steps = [
   {
     number: "01",
-    title: "Connect in 15 minutes",
-    description: "Link your website, calendar, and communication channels. Our guided setup makes it effortless.",
-    checks: ["No coding required", "Works with your existing tools"],
+    icon: MessageSquare,
+    title: "Talk to APEX AI",
+    description: "Tell us about your business. Our AI helps you choose the right channels and setup.",
+    highlight: "Takes 5 minutes",
   },
   {
     number: "02",
-    title: "Train your AI assistant",
-    description: "Answer a few questions about your business. APEX learns your services, policies, and tone of voice.",
-    checks: ["Custom to your business", "Human handover built-in"],
+    icon: Settings,
+    title: "Configure your agents",
+    description: "Customize responses, connect your channels, and set your business rules.",
+    highlight: "Assisted setup available",
   },
   {
     number: "03",
-    title: "Your team gets time back",
-    description: "Watch your dashboard as APEX handles routine tasks—while your team stays in control of what matters.",
-    checks: ["Full visibility & oversight", "Escalation to humans anytime"],
+    icon: Users,
+    title: "Train your team",
+    description: "Show your team how handoffs work and when to step in. We make it simple.",
+    highlight: "Human oversight built-in",
+  },
+  {
+    number: "04",
+    icon: CheckCircle,
+    title: "Go live",
+    description: "Your AI agents start handling conversations. Monitor, adjust, and scale as needed.",
+    highlight: "Live in 15 minutes",
   },
 ];
 
@@ -30,60 +40,58 @@ export function HowItWorksSection() {
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-            How it works
+            Getting Started
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-            Live in an afternoon.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+            From first message to live AI
             <br />
-            <span className="text-muted-foreground">ROI in a week.</span>
+            <span className="text-muted-foreground">in 15 minutes.</span>
           </h2>
         </div>
 
         {/* Steps */}
-        <div className="max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {steps.map((step, index) => (
-            <div
-              key={step.number}
-              className={`relative flex gap-8 lg:gap-12 ${
-                index !== steps.length - 1 ? "pb-12 mb-12 border-b border-border" : ""
-              }`}
-            >
-              {/* Number */}
-              <div className="flex-shrink-0 w-16 lg:w-20">
-                <span className="text-4xl lg:text-5xl font-bold text-muted-foreground/20">
-                  {step.number}
-                </span>
-              </div>
+            <div key={step.title} className="relative">
+              {/* Connector line */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-8 left-full w-full h-px bg-border -translate-x-1/2 z-0" />
+              )}
               
-              {/* Content */}
-              <div className="flex-1 pt-1">
-                <h3 className="text-xl lg:text-2xl font-semibold mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 max-w-lg">
-                  {step.description}
-                </p>
-                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                  {step.checks.map((check) => (
-                    <div key={check} className="flex items-center gap-2 text-sm">
-                      <Check className="h-4 w-4 text-primary" />
-                      <span className="text-muted-foreground">{check}</span>
-                    </div>
-                  ))}
+              <div className="relative z-10">
+                {/* Number */}
+                <div className="text-6xl font-bold text-muted/50 mb-4">{step.number}</div>
+                
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4">
+                  <step.icon className="h-6 w-6 text-primary" />
                 </div>
+                
+                {/* Content */}
+                <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{step.description}</p>
+                
+                {/* Highlight */}
+                <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                  <CheckCircle className="h-3 w-3" />
+                  {step.highlight}
+                </span>
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        <div className="text-center">
           <Button size="lg" asChild className="group">
             <Link to="/pricing">
-              Start Your Free Trial
+              Start Now
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
+          <p className="text-sm text-muted-foreground mt-4">
+            No credit card required • Cancel anytime
+          </p>
         </div>
       </div>
     </section>

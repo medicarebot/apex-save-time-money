@@ -10,8 +10,8 @@ const enterpriseFeatures = [
   },
   {
     icon: BarChart3,
-    title: "Digital Board",
-    description: "AI-powered insights that support your leadership team's strategic decisions.",
+    title: "Executive Insights",
+    description: "AI-powered intelligence that supports strategic decisions.",
   },
   {
     icon: Users,
@@ -38,7 +38,7 @@ export function EnterpriseSection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
               Built for scale.
               <br />
-              <span className="text-white/60">Designed for oversight.</span>
+              <span className="text-white/60">Designed for control.</span>
             </h2>
             <p className="text-lg text-white/60 mb-8 max-w-lg">
               APEX Enterprise gives leadership teams real-time visibility, human-in-the-loop controls, 
@@ -49,11 +49,6 @@ export function EnterpriseSection() {
                 <Link to="/contact">
                   Request Executive Demo
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="heroOutline" asChild>
-                <Link to="/product/digital-board">
-                  Learn About Digital Board
                 </Link>
               </Button>
             </div>
