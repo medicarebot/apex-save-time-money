@@ -238,12 +238,6 @@ export function AIChatWidget() {
           </p>
         </div>
       </div>
-
-      {/* Trust signal */}
-      <div className="flex items-center justify-center gap-2 mt-4 text-white/50 text-xs">
-        <Sparkles className="h-3 w-3" />
-        <span>Powered by APEX AI • 2,400+ businesses trust us</span>
-      </div>
     </div>
   );
 }

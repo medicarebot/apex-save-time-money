@@ -12,7 +12,7 @@ const trustedBy = [
 
 export function HeroSection() {
   return (
-    <section className="hero-gradient relative overflow-hidden pt-24 pb-20 lg:pt-32 lg:pb-28">
+    <section className="hero-gradient relative overflow-hidden py-20 lg:py-28">
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
@@ -66,7 +66,7 @@ export function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-12 pt-8 border-t border-white/10">
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-12 pb-8">
             <div className="text-center">
               <p className="text-2xl lg:text-3xl font-bold text-white">2,400+</p>
               <p className="text-sm text-white/50">Active businesses</p>
@@ -82,12 +82,14 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Trusted by logos */}
-        <div className="mt-16 pt-8 border-t border-white/10">
-          <p className="text-center text-sm text-white/40 mb-5">Trusted by industry leaders</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-3">
+        {/* Trusted by logos - more emphasized */}
+        <div className="pt-8 border-t border-white/10">
+          <p className="text-center text-sm font-medium text-white/60 mb-6 uppercase tracking-widest">
+            Trusted by industry leaders
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4">
             {trustedBy.map((company) => (
-              <span key={company} className="text-white/30 font-medium text-sm tracking-wide">
+              <span key={company} className="text-white/50 font-semibold text-base tracking-wide hover:text-white/70 transition-colors">
                 {company}
               </span>
             ))}

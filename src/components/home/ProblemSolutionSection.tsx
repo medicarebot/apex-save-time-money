@@ -1,5 +1,4 @@
 import { MessageSquare, Calendar, Users, Clock, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const problems = [
   {
@@ -25,18 +24,28 @@ const problems = [
 ];
 
 export function ProblemSolutionSection() {
+  const scrollToChat = () => {
+    const chatSection = document.getElementById('chat-section');
+    if (chatSection) {
+      chatSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-24 lg:py-32 bg-background">
-      <div className="section-container">
+    <section className="py-24 lg:py-32 enterprise-section relative overflow-hidden">
+      {/* Subtle glow */}
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      
+      <div className="section-container relative z-10">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
             Sound familiar?
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
             You're not short on work.
             <br />
-            <span className="text-muted-foreground">You're short on capacity.</span>
+            <span className="text-white/60">You're short on capacity.</span>
           </h2>
         </div>
 
@@ -45,20 +54,20 @@ export function ProblemSolutionSection() {
           {problems.map((item) => (
             <div
               key={item.problem}
-              className="relative bg-card border border-border rounded-2xl p-6 lg:p-8 group hover:border-primary/30 transition-colors"
+              className="relative bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8 group hover:border-primary/30 transition-colors backdrop-blur-sm"
             >
               {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5">
                 <item.icon className="h-6 w-6 text-primary" />
               </div>
 
               {/* Problem */}
-              <p className="text-muted-foreground text-sm mb-2 line-through decoration-muted-foreground/40">
+              <p className="text-white/40 text-sm mb-2 line-through decoration-white/30">
                 {item.problem}
               </p>
 
               {/* Solution */}
-              <p className="text-lg font-semibold text-foreground">
+              <p className="text-lg font-semibold text-white">
                 {item.solution}
               </p>
 
@@ -72,15 +81,15 @@ export function ProblemSolutionSection() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA - scrolls to chat section */}
         <div className="text-center mt-12">
-          <Link 
-            to="/contact" 
+          <button 
+            onClick={scrollToChat}
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
           >
             Talk to APEX AI about your business
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </button>
         </div>
       </div>
     </section>

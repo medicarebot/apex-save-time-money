@@ -63,14 +63,17 @@ export function IndustrySolutionsSection() {
   const activeIndustry = industries.find((i) => i.id === activeTab)!;
 
   return (
-    <section className="py-24 lg:py-32 bg-background">
-      <div className="section-container">
+    <section className="py-24 lg:py-32 enterprise-section relative overflow-hidden">
+      {/* Subtle glow */}
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      
+      <div className="section-container relative z-10">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
             Built for your industry
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
             Results that speak for themselves
           </h2>
         </div>
@@ -84,7 +87,7 @@ export function IndustrySolutionsSection() {
               className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                 activeTab === industry.id
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+                  : "bg-white/10 text-white/60 hover:text-white hover:bg-white/20"
               }`}
             >
               <industry.icon className="h-4 w-4" />
@@ -95,14 +98,14 @@ export function IndustrySolutionsSection() {
 
         {/* Active industry content */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card border border-border rounded-2xl p-8 lg:p-12">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 lg:p-12 backdrop-blur-sm">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Content */}
               <div>
-                <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
                   {activeIndustry.headline}
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-white/60 mb-6 leading-relaxed">
                   {activeIndustry.description}
                 </p>
                 <Button asChild className="group">
@@ -116,9 +119,9 @@ export function IndustrySolutionsSection() {
               {/* Metrics */}
               <div className="grid grid-cols-3 gap-4">
                 {activeIndustry.metrics.map((metric) => (
-                  <div key={metric.label} className="text-center p-4 bg-accent/50 rounded-xl">
+                  <div key={metric.label} className="text-center p-4 bg-primary/10 border border-primary/20 rounded-xl">
                     <p className="text-2xl lg:text-3xl font-bold text-primary">{metric.value}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{metric.label}</p>
+                    <p className="text-xs text-white/50 mt-1">{metric.label}</p>
                   </div>
                 ))}
               </div>
