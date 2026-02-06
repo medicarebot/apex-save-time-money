@@ -1,31 +1,31 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Clock, DollarSign, Users } from "lucide-react";
+import { ArrowRight, TrendingUp, Clock, MessageSquare, Users } from "lucide-react";
 
 const roiStats = [
   {
     icon: Clock,
     value: "47 hours",
-    label: "recovered per week",
-    description: "Time your team gets back for high-value work and patient care.",
+    label: "recovered weekly",
+    description: "Average time your team gets back for high-value work.",
   },
   {
-    icon: DollarSign,
-    value: "7-14 days",
-    label: "to see positive ROI",
-    description: "Most customers recover their investment within the first two weeks.",
-  },
-  {
-    icon: Users,
+    icon: MessageSquare,
     value: "1,247",
-    label: "conversations handled monthly",
-    description: "Per business average—without adding to your team's workload.",
+    label: "conversations/month",
+    description: "Handled automatically—without adding to your workload.",
   },
   {
     icon: TrendingUp,
     value: "32%",
-    label: "increase in bookings",
+    label: "more bookings",
     description: "When customers can book 24/7, more of them do.",
+  },
+  {
+    icon: Users,
+    value: "98%",
+    label: "satisfaction rate",
+    description: "Teams love having capacity back for meaningful work.",
   },
 ];
 
@@ -39,10 +39,10 @@ export function ROISection() {
             Real Results
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-            The numbers don't lie
+            The numbers speak for themselves
           </h2>
           <p className="text-lg text-muted-foreground">
-            Across 2,400+ businesses, here's what APEX delivers.
+            Across 2,400+ businesses using APEX every day.
           </p>
         </div>
 
@@ -66,8 +66,8 @@ export function ROISection() {
         {/* CTA */}
         <div className="text-center">
           <Button size="lg" variant="outline" asChild className="group">
-            <Link to="/pricing">
-              Calculate Your ROI
+            <Link to="/contact">
+              See how APEX works for your industry
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

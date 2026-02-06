@@ -1,25 +1,26 @@
-import { MessageSquare, Calendar, ClipboardList, TrendingUp } from "lucide-react";
+import { MessageSquare, Calendar, Users, Clock, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const problems = [
   {
-    problem: "Your inbox is overflowing",
-    solution: "AI handles routine queries instantly",
+    problem: "Missed messages = lost revenue",
+    solution: "AI responds in seconds, 24/7, on every channel",
     icon: MessageSquare,
   },
   {
-    problem: "Phone tag kills productivity",
-    solution: "Customers self-book online, 24/7",
+    problem: "Phone tag kills your day",
+    solution: "Customers self-book—no back-and-forth needed",
     icon: Calendar,
   },
   {
-    problem: "Follow-ups slip through cracks",
-    solution: "Automated reminders keep nothing missed",
-    icon: ClipboardList,
+    problem: "Follow-ups fall through cracks",
+    solution: "Every customer gets the right message at the right time",
+    icon: Clock,
   },
   {
-    problem: "Growth means more stress",
-    solution: "Scale without overloading your team",
-    icon: TrendingUp,
+    problem: "Growing means burning out",
+    solution: "Scale your capacity without scaling your stress",
+    icon: Users,
   },
 ];
 
@@ -30,12 +31,12 @@ export function ProblemSolutionSection() {
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-            The Problem
+            Sound familiar?
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-            Your team deserves better
+            You're not short on work.
             <br />
-            <span className="text-muted-foreground">than endless admin work.</span>
+            <span className="text-muted-foreground">You're short on capacity.</span>
           </h2>
         </div>
 
@@ -69,6 +70,17 @@ export function ProblemSolutionSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/contact" 
+            className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+          >
+            Talk to APEX AI about your business
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

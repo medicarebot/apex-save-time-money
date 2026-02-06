@@ -1,33 +1,43 @@
-import { Check, X } from "lucide-react";
+import { Check, X, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const comparisons = [
+const competitors = [
   {
-    category: "Simple Chatbots",
+    name: "Basic Chatbots",
     limitations: [
-      "Script-based, breaks on edge cases",
-      "No booking or CRM integration",
-      "No human handover options",
+      "Scripted responses only",
+      "No memory between sessions", 
+      "Can't handle complex questions",
+      "No human handover",
     ],
-    apex: "Context-aware AI that handles routine queries and seamlessly escalates to your team when needed",
   },
   {
-    category: "CRM Tools",
+    name: "CRM Tools",
     limitations: [
-      "Manual data entry",
-      "Passive—waits for you to act",
-      "Siloed from customer communication",
+      "You still do the work manually",
+      "No AI-powered responses",
+      "Doesn't reduce workload",
+      "Expensive for what you get",
     ],
-    apex: "Auto-captures leads from every channel, keeps your team informed, and syncs with your operation",
   },
   {
-    category: "Booking Software",
+    name: "Booking Software",
     limitations: [
-      "Just calendars with forms",
-      "No conversation handling",
-      "No team coordination features",
+      "Just scheduling—nothing else",
+      "No customer communication",
+      "No follow-up automation",
+      "Doesn't grow with you",
     ],
-    apex: "Smart scheduling with AI pre-qualification, automatic reminders, and seamless handoff to your team",
   },
+];
+
+const apexBenefits = [
+  "Full AI conversations across all channels",
+  "Persistent memory—knows every customer's history",
+  "Seamlessly escalates to your team when needed",
+  "One platform: chat, booking, follow-ups, growth",
+  "Central intelligence coordinates everything",
+  "Scales from solo business to enterprise",
 ];
 
 export function DifferentiationSection() {
@@ -37,59 +47,79 @@ export function DifferentiationSection() {
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-            Why APEX
+            Why APEX?
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
             Not another chatbot.
             <br />
-            Not another CRM.
+            <span className="text-muted-foreground">A complete operating system.</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            APEX replaces 3-4 tools with one unified platform that actually works together.
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            Most tools solve one problem. APEX handles the entire customer journey—from first message to repeat business.
           </p>
         </div>
 
-        {/* Comparison cards */}
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-          {comparisons.map((item) => (
-            <div
-              key={item.category}
-              className="bg-card border border-border rounded-2xl overflow-hidden"
+        {/* Comparison grid */}
+        <div className="grid lg:grid-cols-4 gap-6 mb-12">
+          {/* Competitors */}
+          {competitors.map((comp) => (
+            <div 
+              key={comp.name}
+              className="bg-card border border-border rounded-2xl p-6"
             >
-              {/* Header */}
-              <div className="p-6 border-b border-border">
-                <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                  vs {item.category}
-                </p>
-              </div>
-
-              {/* Limitations */}
-              <div className="p-6 border-b border-border bg-muted/30">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-                  Common limitations
-                </p>
-                <ul className="space-y-3">
-                  {item.limitations.map((limitation) => (
-                    <li key={limitation} className="flex items-start gap-3">
-                      <X className="h-4 w-4 text-destructive flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground">{limitation}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* APEX solution */}
-              <div className="p-6">
-                <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-4">
-                  With APEX
-                </p>
-                <div className="flex items-start gap-3">
-                  <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground font-medium">{item.apex}</span>
-                </div>
-              </div>
+              <h3 className="font-semibold mb-4 text-muted-foreground">{comp.name}</h3>
+              <ul className="space-y-3">
+                {comp.limitations.map((limitation) => (
+                  <li key={limitation} className="flex items-start gap-2 text-sm">
+                    <X className="h-4 w-4 text-destructive/60 mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{limitation}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+
+          {/* APEX */}
+          <div className="bg-primary/5 border-2 border-primary/20 rounded-2xl p-6">
+            <h3 className="font-semibold mb-4 text-primary">APEX RoboTech</h3>
+            <ul className="space-y-3">
+              {apexBenefits.slice(0, 4).map((benefit) => (
+                <li key={benefit} className="flex items-start gap-2 text-sm">
+                  <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Additional benefits */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-card border border-border rounded-2xl p-6 text-center">
+            <p className="text-sm text-muted-foreground mb-4">Plus what others can't offer:</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {apexBenefits.slice(4).map((benefit) => (
+                <span 
+                  key={benefit}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent text-sm"
+                >
+                  <Check className="h-3 w-3 text-primary" />
+                  {benefit}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/pricing" 
+            className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+          >
+            See how APEX compares
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
