@@ -11,12 +11,12 @@ const enterpriseFeatures = [
   {
     icon: BarChart3,
     title: "Digital Board",
-    description: "AI advisors that surface insights, predict trends, and support strategic decisions.",
+    description: "AI-powered insights that support your leadership team's strategic decisions.",
   },
   {
     icon: Users,
-    title: "Multi-Location",
-    description: "Centralized control with location-specific customization and reporting.",
+    title: "Human Oversight",
+    description: "Full visibility, audit trails, and escalation controls at every level.",
   },
   {
     icon: Lock,
@@ -38,11 +38,11 @@ export function EnterpriseSection() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
               Built for scale.
               <br />
-              <span className="text-white/60">Ready for leadership.</span>
+              <span className="text-white/60">Designed for oversight.</span>
             </h2>
             <p className="text-lg text-white/60 mb-8 max-w-lg">
-              APEX Enterprise gives leadership teams real-time visibility into operations, 
-              AI-powered strategic insights, and the security infrastructure that serious organizations require.
+              APEX Enterprise gives leadership teams real-time visibility, human-in-the-loop controls, 
+              and the security infrastructure that responsible organizations require.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="hero" asChild className="group">

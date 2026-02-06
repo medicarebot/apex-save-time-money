@@ -3,22 +3,22 @@ import { MessageSquare, Calendar, ClipboardList, TrendingUp } from "lucide-react
 const problems = [
   {
     problem: "Your inbox is overflowing",
-    solution: "AI responds in <2 seconds, 24/7",
+    solution: "AI handles routine queries instantly",
     icon: MessageSquare,
   },
   {
     problem: "Phone tag kills productivity",
-    solution: "Customers self-book online",
+    solution: "Customers self-book online, 24/7",
     icon: Calendar,
   },
   {
     problem: "Follow-ups slip through cracks",
-    solution: "Automated reminders & sequences",
+    solution: "Automated reminders keep nothing missed",
     icon: ClipboardList,
   },
   {
-    problem: "Growth means more headaches",
-    solution: "Scale without hiring more admin",
+    problem: "Growth means more stress",
+    solution: "Scale without overloading your team",
     icon: TrendingUp,
   },
 ];
@@ -33,9 +33,9 @@ export function ProblemSolutionSection() {
             The Problem
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-            Your team is buried in busywork.
+            Your team deserves better
             <br />
-            <span className="text-muted-foreground">Your customers are waiting.</span>
+            <span className="text-muted-foreground">than endless admin work.</span>
           </h2>
         </div>
 

@@ -6,9 +6,9 @@ const comparisons = [
     limitations: [
       "Script-based, breaks on edge cases",
       "No booking or CRM integration",
-      "No operations automation",
+      "No human handover options",
     ],
-    apex: "Context-aware AI that handles complex conversations, books appointments, and triggers internal workflows",
+    apex: "Context-aware AI that handles routine queries and seamlessly escalates to your team when needed",
   },
   {
     category: "CRM Tools",
@@ -17,14 +17,14 @@ const comparisons = [
       "Passive—waits for you to act",
       "Siloed from customer communication",
     ],
-    apex: "Auto-captures leads from every channel, proactively follows up, and syncs with your entire operation",
+    apex: "Auto-captures leads from every channel, keeps your team informed, and syncs with your operation",
   },
   {
     category: "Booking Software",
     limitations: [
       "Just calendars with forms",
       "No conversation handling",
-      "No growth or operations features",
+      "No team coordination features",
     ],
     apex: "Smart scheduling with AI pre-qualification, automatic reminders, and seamless handoff to your team",
   },
