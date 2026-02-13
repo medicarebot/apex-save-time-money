@@ -41,11 +41,11 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2 text-white/70">
               <Check className="h-4 w-4 text-primary" />
-              <span className="text-sm">Live in 15 minutes</span>
+              <span className="text-sm">Cancel anytime</span>
             </div>
             <div className="flex items-center gap-2 text-white/70">
               <Check className="h-4 w-4 text-primary" />
-              <span className="text-sm">Human handover built-in</span>
+              <span className="text-sm">No credit card required</span>
             </div>
           </div>
 
