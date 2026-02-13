@@ -1,49 +1,44 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MessageSquare, ClipboardCheck, Rocket, Users } from "lucide-react";
+import { ArrowRight, Calendar, MessageSquare, ClipboardCheck, Rocket, Users, Network } from "lucide-react";
 
 const products = [
-  {
-    icon: Calendar,
-    name: "Smart Scheduling",
-    slug: "scheduling",
-    tagline: "Never miss a booking again",
-    description: "AI-powered appointment booking that works 24/7.",
-    color: "bg-blue-50 text-blue-600",
-  },
   {
     icon: MessageSquare,
     name: "Customer Chat & Sales",
     slug: "chat",
-    tagline: "Answer every customer instantly",
-    description: "Multi-channel AI support with human handover.",
-    color: "bg-teal-50 text-teal-600",
+    tagline: "Structured communication across every channel",
+    description: "Centralize, track, and manage every customer inquiry with AI-powered routing and human escalation.",
+  },
+  {
+    icon: Calendar,
+    name: "Smart Scheduling",
+    slug: "scheduling",
+    tagline: "Automated booking without administrative overhead",
+    description: "Automate booking, confirmations, reminders, and calendar coordination across your organization.",
   },
   {
     icon: ClipboardCheck,
     name: "Operations & Tasks",
     slug: "operations",
-    tagline: "Run your business on autopilot",
-    description: "Automate internal workflows and task management.",
-    color: "bg-amber-50 text-amber-600",
+    tagline: "AI coordination for internal workflows",
+    description: "Structure repetitive coordination tasks, automate routing, and maintain clear audit trails.",
   },
   {
     icon: Rocket,
     name: "Growth Pack",
     slug: "growth",
-    tagline: "Grow without hiring",
-    description: "Affiliates and reviews bring customers automatically.",
-    color: "bg-rose-50 text-rose-600",
+    tagline: "Systemized reputation and retention",
+    description: "Automate review collection, referral flows, and re-engagement campaigns.",
   },
   {
     icon: Users,
     name: "Digital Board",
     slug: "digital-board",
-    tagline: "AI advisors for leadership",
-    description: "C-level AI support for enterprise decisions.",
+    tagline: "Executive-level operational intelligence",
+    description: "AI-powered dashboards, pattern detection, and strategic recommendations for leadership.",
     badge: "Enterprise",
-    color: "bg-purple-50 text-purple-600",
   },
 ];
 
@@ -51,21 +46,21 @@ const Product = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-muted/30">
-        <div className="section-container">
+      <section className="hero-gradient py-24 lg:py-32">
+        <div className="section-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              One Platform, Every Tool You Need
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--hero-text))] mb-6 leading-tight">
+              AI infrastructure for every layer of your operations
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Choose the modules that fit your business. Start with one, add more as you grow.
+            <p className="text-lg text-[hsl(var(--hero-text-muted))] max-w-2xl mx-auto">
+              Choose the modules that match your operational needs. Start with one, scale as your organization grows.
             </p>
           </div>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 lg:py-28">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
@@ -74,9 +69,9 @@ const Product = () => {
                 to={`/product/${product.slug}`}
                 className="group bg-card border border-border rounded-2xl p-8 card-hover"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${product.color}`}>
-                    <product.icon className="h-7 w-7" />
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <product.icon className="h-6 w-6 text-primary" />
                   </div>
                   {product.badge && (
                     <span className="text-xs font-semibold bg-foreground text-background px-2.5 py-1 rounded-full">
@@ -87,8 +82,8 @@ const Product = () => {
                 <h3 className="font-semibold text-xl mb-2 group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-primary font-medium text-sm mb-2">{product.tagline}</p>
-                <p className="text-muted-foreground mb-4">{product.description}</p>
+                <p className="text-primary/80 font-medium text-sm mb-2">{product.tagline}</p>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{product.description}</p>
                 <span className="inline-flex items-center text-primary font-medium text-sm group-hover:gap-2 transition-all">
                   Learn more <ArrowRight className="ml-1 h-4 w-4" />
                 </span>
@@ -98,22 +93,30 @@ const Product = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 lg:py-20 bg-accent">
+      {/* Master Bot Section */}
+      <section className="py-20 lg:py-28 bg-muted/30">
         <div className="section-container">
           <div className="max-w-2xl mx-auto text-center">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Network className="h-6 w-6 text-primary" />
+            </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to get started?
+              Unified Under the Master Bot
             </h2>
-            <p className="text-muted-foreground mb-6">
-              See our simple, transparent pricing and start automating today.
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              All modules operate under a single orchestration layer — ensuring memory, context continuity, and structured coordination across your entire operation.
             </p>
-            <Button size="lg" asChild>
-              <Link to="/pricing">
-                View Pricing
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link to="/pricing">
+                  Start Free Trial
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/contact">Request Demo</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
