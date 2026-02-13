@@ -1,7 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, AlertTriangle, Zap, Network } from "lucide-react";
+import { ArrowRight, Check, AlertTriangle, Zap, Network, ChevronDown } from "lucide-react";
 import { productData } from "@/data/productData";
 
 const ProductDetail = () => {
@@ -12,27 +12,25 @@ const ProductDetail = () => {
     return <Navigate to="/product" replace />;
   }
 
-  const Icon = product.icon;
-
   return (
     <Layout>
-      {/* Hero */}
-      <section className="hero-gradient py-24 lg:py-32">
+      {/* SECTION 1 — DARK HERO */}
+      <section className="hero-gradient py-24 lg:py-36">
         <div className="section-container relative z-10">
           <div className="max-w-3xl">
             <Link
               to="/product"
-              className="inline-flex items-center text-sm text-[hsl(var(--hero-text-muted))] hover:text-[hsl(var(--hero-text))] mb-8 transition-colors"
+              className="inline-flex items-center text-sm text-[hsl(var(--hero-text-muted))] hover:text-[hsl(var(--hero-text))] mb-10 transition-colors"
             >
               ← Back to Products
             </Link>
-            <p className="text-primary font-medium mb-3 text-sm tracking-wide uppercase">
+            <p className="text-primary font-medium mb-4 text-sm tracking-widest uppercase">
               {product.tagline}
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--hero-text))] mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--hero-text))] mb-8 leading-[1.1]">
               {product.headline}
             </h1>
-            <p className="text-lg text-[hsl(var(--hero-text-muted))] mb-10 leading-relaxed max-w-2xl">
+            <p className="text-lg lg:text-xl text-[hsl(var(--hero-text-muted))] mb-12 leading-relaxed max-w-2xl">
               {product.subtext}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -50,43 +48,43 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Problem / Solution */}
-      <section className="py-20 lg:py-28">
+      {/* SECTION 2 — THE COST OF OPERATING WITHOUT STRUCTURE */}
+      <section className="py-20 lg:py-28" style={{ background: "hsl(215 28% 7%)" }}>
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             {/* Problem */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center">
-                  <AlertTriangle className="h-5 w-5 text-destructive" />
+            <div className="p-8 lg:p-10 rounded-2xl" style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 16%)" }}>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "hsl(0 84% 60% / 0.1)" }}>
+                  <AlertTriangle className="h-5 w-5" style={{ color: "hsl(0 84% 60%)" }} />
                 </div>
-                <h2 className="text-2xl font-bold">{product.problemTitle}</h2>
+                <h2 className="text-2xl font-bold text-[hsl(var(--hero-text))]">{product.problemTitle}</h2>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {product.problems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-destructive/60 mt-2.5 flex-shrink-0" />
-                    <span className="text-muted-foreground leading-relaxed">{item}</span>
+                    <span className="w-1.5 h-1.5 rounded-full mt-2.5 flex-shrink-0" style={{ background: "hsl(0 84% 60% / 0.6)" }} />
+                    <span className="text-[hsl(var(--hero-text-muted))] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* After */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+            <div className="p-8 lg:p-10 rounded-2xl" style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 16%)" }}>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <Zap className="h-5 w-5 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold">{product.afterTitle}</h2>
+                <h2 className="text-2xl font-bold text-[hsl(var(--hero-text))]">{product.afterTitle}</h2>
               </div>
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {product.afterItems.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                       <Check className="h-3.5 w-3.5 text-primary" />
                     </div>
-                    <span className="text-foreground leading-relaxed">{item}</span>
+                    <span className="text-[hsl(var(--hero-text))] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -95,46 +93,70 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-container">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* Capabilities */}
-      <section className="py-20 lg:py-28">
+      {/* SECTION 3 — SYSTEM ARCHITECTURE */}
+      <section className="py-20 lg:py-28" style={{ background: "hsl(215 28% 6%)" }}>
         <div className="section-container">
-          <h2 className="text-2xl font-bold mb-10">{product.capabilitiesTitle}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-[hsl(var(--hero-text))] mb-4 text-center">
+            System Architecture
+          </h2>
+          <p className="text-[hsl(var(--hero-text-muted))] text-center mb-16 max-w-xl mx-auto">
+            How data flows through the APEX intelligence layer.
+          </p>
+          <div className="max-w-3xl mx-auto">
+            <div className="flex flex-col items-center gap-4">
+              {/* Input */}
+              <div className="w-full p-6 rounded-2xl text-center" style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 18%)" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Input</p>
+                <p className="text-[hsl(var(--hero-text))] font-medium text-lg">{product.architectureFlow.input}</p>
+              </div>
+              <ChevronDown className="h-6 w-6 text-primary" />
+              {/* Intelligence */}
+              <div className="w-full p-6 rounded-2xl text-center premium-card">
+                <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Intelligence Layer</p>
+                <p className="text-[hsl(var(--hero-text))] font-medium text-lg">{product.architectureFlow.intelligence}</p>
+              </div>
+              <ChevronDown className="h-6 w-6 text-primary" />
+              {/* Outcome */}
+              <div className="w-full p-6 rounded-2xl text-center" style={{ background: "hsl(var(--primary) / 0.08)", border: "1px solid hsl(var(--primary) / 0.2)" }}>
+                <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">Outcome</p>
+                <p className="text-[hsl(var(--hero-text))] font-medium text-lg">{product.architectureFlow.outcome}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — BUSINESS IMPACT */}
+      <section className="py-20 lg:py-28" style={{ background: "hsl(215 28% 8%)" }}>
+        <div className="section-container">
+          <h2 className="text-2xl md:text-3xl font-bold text-[hsl(var(--hero-text))] mb-14">{product.capabilitiesTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {product.capabilities.map((cap) => (
               <div
-                key={cap}
-                className="bg-card border border-border rounded-xl p-6 flex items-start gap-4"
+                key={cap.title}
+                className="p-6 rounded-2xl" style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 16%)" }}
               >
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center mb-4" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <Check className="h-4 w-4 text-primary" />
                 </div>
-                <span className="font-medium leading-relaxed">{cap}</span>
+                <h3 className="font-semibold text-[hsl(var(--hero-text))] mb-2">{cap.title}</h3>
+                <p className="text-sm text-[hsl(var(--hero-text-muted))] leading-relaxed">{cap.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-container">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* Who This Is For */}
-      <section className="py-20 lg:py-28">
+      {/* SECTION 5 — WHO THIS IS FOR */}
+      <section className="py-20 lg:py-28" style={{ background: "hsl(215 28% 6%)" }}>
         <div className="section-container">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold mb-8">{product.whoTitle}</h2>
-            <ul className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-[hsl(var(--hero-text))] mb-10">{product.whoTitle}</h2>
+            <ul className="space-y-5">
               {product.whoItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
-                  <span className="text-muted-foreground leading-relaxed">{item}</span>
+                  <span className="text-[hsl(var(--hero-text-muted))] leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -142,19 +164,30 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Master Bot Integration */}
-      <section className="py-20 lg:py-28 bg-muted/30">
+      {/* SECTION 6 — SYSTEM CONNECTION */}
+      <section className="py-20 lg:py-28" style={{ background: "hsl(215 28% 8%)" }}>
         <div className="section-container">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-6" style={{ background: "hsl(var(--primary) / 0.1)" }}>
               <Network className="h-6 w-6 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold mb-4">
-              How It Connects to the APEX System
+            <h2 className="text-2xl md:text-3xl font-bold text-[hsl(var(--hero-text))] mb-5">
+              How This Connects to the APEX System
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-10">
-              All modules operate under the Master Bot — ensuring memory, context continuity, and structured orchestration across the entire system.
+            <p className="text-[hsl(var(--hero-text-muted))] leading-relaxed max-w-lg mx-auto">
+              All modules operate under the Master Bot core — ensuring memory continuity, cross-channel context, and centralized intelligence. APEX is unified infrastructure, not separate tools.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — STRATEGIC CTA */}
+      <section className="py-24 lg:py-32 hero-gradient">
+        <div className="section-container relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--hero-text))] mb-6">
+              {product.finalHeadline}
+            </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
                 <Link to="/pricing">
@@ -162,8 +195,8 @@ const ProductDetail = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Request Demo</Link>
+              <Button size="lg" variant="heroOutline" asChild>
+                <Link to="/contact">Request Executive Demo</Link>
               </Button>
             </div>
           </div>
