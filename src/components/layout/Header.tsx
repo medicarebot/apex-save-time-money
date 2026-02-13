@@ -17,6 +17,7 @@ const productItems = [
   { name: "Revenue Capture", href: "/product/revenue-capture", description: "Automated scheduling that protects revenue" },
   { name: "Operational Automation", href: "/product/operational-automation", description: "AI coordination for internal workflows" },
   { name: "Reputation & Retention", href: "/product/reputation-retention", description: "Systemized reputation and retention management" },
+  { name: "Executive Intelligence", href: "/product/executive-intelligence", description: "Real-time operational visibility for leadership", enterprise: true },
 ];
 
 const industryItems = [
@@ -73,14 +74,24 @@ export function Header() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-1 p-4">
-                      {productItems.map((item) => (
+                      {productItems.map((item, index) => (
                         <li key={item.name}>
+                          {item.enterprise && index > 0 && (
+                            <div className="border-t border-border/50 my-1" />
+                          )}
                           <NavigationMenuLink asChild>
                             <Link
                               to={item.href}
                               className="block select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             >
-                              <div className="text-sm font-medium leading-none">{item.name}</div>
+                              <div className="flex items-center gap-2">
+                                <div className="text-sm font-medium leading-none">{item.name}</div>
+                                {item.enterprise && (
+                                  <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded text-primary" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+                                    Enterprise
+                                  </span>
+                                )}
+                              </div>
                               <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                                 {item.description}
                               </p>
