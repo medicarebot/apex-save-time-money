@@ -9,11 +9,14 @@ const footerNavigation = {
     { name: "Growth Pack", href: "/product/growth" },
     { name: "Digital Board", href: "/product/digital-board" },
   ],
-  solutions: [
-    { name: "Salons & Spas", href: "/solutions/salons" },
-    { name: "Clinics & Healthcare", href: "/solutions/healthcare" },
-    { name: "Real Estate", href: "/solutions/real-estate" },
-    { name: "Service Businesses", href: "/solutions/services" },
+  industries: [
+    { name: "Private Clinics & Medical Centers", href: "/solutions/private-clinics" },
+    { name: "Aesthetic & Cosmetic Clinics", href: "/solutions/aesthetic-clinics" },
+    { name: "Real Estate Agencies", href: "/solutions/real-estate" },
+    { name: "Legal & Law Firms", href: "/solutions/legal" },
+    { name: "Accounting & Tax Firms", href: "/solutions/accounting" },
+    { name: "Automotive Dealerships", href: "/solutions/automotive" },
+    { name: "Private Education & Training", href: "/solutions/education" },
   ],
   company: [
     { name: "Pricing", href: "/pricing" },
@@ -66,9 +69,9 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold text-background">Solutions</h3>
+                <h3 className="text-sm font-semibold text-background">Industries</h3>
                 <ul role="list" className="mt-4 space-y-3">
-                  {footerNavigation.solutions.map((item) => (
+                  {footerNavigation.industries.map((item) => (
                     <li key={item.name}>
                       <Link
                         to={item.href}

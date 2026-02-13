@@ -60,8 +60,8 @@ export function AIChatWidget() {
       
       if (lowerMessage.includes("pricing") || lowerMessage.includes("cost") || lowerMessage.includes("price")) {
         response = "Great question! Our self-service AI agents start from **49,990 Ft/month** with no setup fees. You only pay for what you use with our credit system. Would you like me to help you estimate costs for your specific business, or would you prefer to talk to our team?";
-      } else if (lowerMessage.includes("salon") || lowerMessage.includes("spa") || lowerMessage.includes("hair")) {
-        response = "Salons use APEX for **24/7 booking, automated reminders**, and review collection. Your team stays focused on clients while APEX handles scheduling and follow-ups. Want me to walk you through a typical salon setup?";
+      } else if (lowerMessage.includes("legal") || lowerMessage.includes("law") || lowerMessage.includes("firm")) {
+        response = "Law firms use APEX for **structured client intake, inquiry routing, appointment scheduling**, and case status updates. Your team focuses on billable work while APEX handles the administrative coordination. Want me to walk you through a typical legal firm setup?";
       } else if (lowerMessage.includes("clinic") || lowerMessage.includes("doctor") || lowerMessage.includes("health") || lowerMessage.includes("medical")) {
         response = "APEX handles **patient inquiries, appointment scheduling, and follow-ups** with HIPAA-ready infrastructure and human handover when needed. Your staff focuses on care, not admin. Should I explain our healthcare-specific features?";
       } else if (lowerMessage.includes("how") && lowerMessage.includes("work")) {
@@ -73,7 +73,7 @@ export function AIChatWidget() {
       } else if (lowerMessage.includes("enterprise") || lowerMessage.includes("large") || lowerMessage.includes("executive")) {
         response = "For enterprise teams, we offer **Executive Command** — a strategic AI layer for leadership with company-wide visibility and decision support. I'd recommend speaking directly with our enterprise team. Shall I arrange that?";
       } else {
-        response = "I can help you explore APEX. We work with businesses across industries — salons, clinics, real estate, and service companies. What type of business do you run? That will help me show you the most relevant capabilities.";
+        response = "I can help you explore APEX. We work with organizations across industries — private clinics, aesthetic practices, real estate agencies, legal firms, and automotive dealerships. What type of organization do you run? That will help me show you the most relevant capabilities.";
       }
       
       setMessages(prev => [...prev, {

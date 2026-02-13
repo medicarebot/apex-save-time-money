@@ -19,11 +19,14 @@ const productItems = [
   { name: "Growth Pack", href: "/product/growth", description: "Reviews, referrals, and reputation" },
 ];
 
-const solutionItems = [
-  { name: "Salons & Spas", href: "/solutions/salons" },
-  { name: "Clinics & Healthcare", href: "/solutions/healthcare" },
-  { name: "Real Estate", href: "/solutions/real-estate" },
-  { name: "Service Businesses", href: "/solutions/services" },
+const industryItems = [
+  { name: "Private Clinics & Medical Centers", href: "/solutions/private-clinics" },
+  { name: "Aesthetic & Cosmetic Clinics", href: "/solutions/aesthetic-clinics" },
+  { name: "Real Estate Agencies", href: "/solutions/real-estate" },
+  { name: "Legal & Law Firms", href: "/solutions/legal" },
+  { name: "Accounting & Tax Firms", href: "/solutions/accounting" },
+  { name: "Automotive Dealerships", href: "/solutions/automotive" },
+  { name: "Private Education & Training", href: "/solutions/education" },
 ];
 
 export function Header() {
@@ -92,11 +95,11 @@ export function Header() {
                 {/* Solutions dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="nav-link-dark bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-gray-300 hover:text-white">
-                    Solutions
+                    Industries
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[200px] gap-1 p-4">
-                      {solutionItems.map((item) => (
+                    <ul className="grid w-[280px] gap-1 p-4">
+                      {industryItems.map((item) => (
                         <li key={item.name}>
                           <NavigationMenuLink asChild>
                             <Link
@@ -167,8 +170,8 @@ export function Header() {
 
               {/* Solutions section */}
               <div className="px-3 py-2">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Solutions</p>
-                {solutionItems.map((item) => (
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Industries</p>
+                {industryItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}

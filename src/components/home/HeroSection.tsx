@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Check, Zap } from "lucide-react";
 
 const industries = [
-  "Salons & Spas",
-  "Clinics & Healthcare",
-  "Real Estate",
-  "Professional Services",
-  "Hospitality",
+  "Private Clinics & Medical Centers",
+  "Aesthetic & Cosmetic Clinics",
+  "Real Estate Agencies",
+  "Legal & Law Firms",
+  "Accounting & Tax Firms",
+  "Automotive Dealerships",
+  "Private Education & Training",
 ];
 
 export function HeroSection() {
@@ -30,7 +32,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-            APEX deploys AI agents across your channels—website, WhatsApp, Instagram, email—so your team can focus on what matters.
+            APEX deploys AI agents across your channels — website, WhatsApp, Instagram, email — ensuring no inquiry is missed and every interaction is operationally structured.
           </p>
 
           {/* Value props */}
@@ -85,7 +87,7 @@ export function HeroSection() {
         {/* Built for */}
         <div className="pt-8 border-t border-white/10">
           <p className="text-center text-sm font-medium text-white/60 mb-6 uppercase tracking-widest">
-            Built for modern service businesses
+            Built for high-value service operations
           </p>
           <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
             {industries.map((industry) => (

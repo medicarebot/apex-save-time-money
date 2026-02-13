@@ -5,27 +5,27 @@ import { ArrowRight, TrendingUp, Clock, MessageSquare, Users } from "lucide-reac
 const roiStats = [
   {
     icon: Clock,
-    value: "Recover hours",
+    value: "Recover operational hours",
     label: "every week",
-    description: "Free your team from repetitive tasks and focus on high-value work.",
+    description: "Free your team from repetitive coordination work.",
   },
   {
     icon: MessageSquare,
-    value: "24/7 availability",
+    value: "24/7 structured intake",
     label: "across all channels",
-    description: "Your AI agents handle conversations around the clock—no gaps.",
+    description: "Every inquiry logged, tracked, and routed correctly.",
   },
   {
     icon: TrendingUp,
-    value: "More bookings",
-    label: "with always-on scheduling",
-    description: "Capture more bookings with 24/7 availability and instant responses.",
+    value: "Higher conversion rates",
+    label: "through faster responses",
+    description: "Faster responses increase booking and consultation rates.",
   },
   {
     icon: Users,
-    value: "Better experience",
-    label: "for every customer",
-    description: "Improve customer satisfaction with instant, consistent responses.",
+    value: "Improved client experience",
+    label: "at every step",
+    description: "Consistent, professional communication at every step.",
   },
 ];
 
@@ -42,10 +42,10 @@ export function ROISection() {
             Real Results
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-            Focused on measurable operational improvements
+            Operational performance. Measurable results.
           </h2>
           <p className="text-lg text-white/60">
-            What businesses experience when APEX handles the repetitive work.
+            What high-value service organizations experience when communication becomes structured and automated.
           </p>
         </div>
 

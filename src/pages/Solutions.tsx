@@ -1,56 +1,64 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Scissors, Stethoscope, ShoppingCart, Home, Wrench, Calculator } from "lucide-react";
+import { ArrowRight, Stethoscope, Sparkles, Building2, Scale, Calculator, Car, GraduationCap } from "lucide-react";
 
 const industries = [
   {
-    icon: Scissors,
-    name: "Hairdressers & Salons",
-    slug: "salons",
-    description: "Stop missing calls. Let customers book 24/7 while you focus on styling.",
-    problem: "Missed calls mean missed appointments and lost revenue.",
-    color: "bg-pink-50 text-pink-600",
-  },
-  {
     icon: Stethoscope,
-    name: "Clinics & Healthcare",
-    slug: "healthcare",
-    description: "Reduce no-shows with automatic reminders and easy rescheduling.",
+    name: "Private Clinics & Medical Centers",
+    slug: "private-clinics",
+    description: "Reduce administrative load with automated scheduling, patient inquiries, and follow-ups.",
     problem: "Administrative overload takes time away from patient care.",
     color: "bg-blue-50 text-blue-600",
   },
   {
-    icon: ShoppingCart,
-    name: "E-commerce",
-    slug: "ecommerce",
-    description: "Answer product questions instantly and boost conversion rates.",
-    problem: "Customers leave when they can't get quick answers.",
-    color: "bg-orange-50 text-orange-600",
+    icon: Sparkles,
+    name: "Aesthetic & Cosmetic Clinics",
+    slug: "aesthetic-clinics",
+    description: "Convert consultation inquiries into booked appointments with structured, multi-channel communication.",
+    problem: "High-value inquiries go unanswered outside business hours.",
+    color: "bg-pink-50 text-pink-600",
   },
   {
-    icon: Home,
-    name: "Real Estate & Rentals",
+    icon: Building2,
+    name: "Real Estate Agencies",
     slug: "real-estate",
     description: "Qualify leads automatically and schedule viewings without phone tag.",
     problem: "Too many inquiries, not enough hours to respond to all.",
     color: "bg-green-50 text-green-600",
   },
   {
-    icon: Wrench,
-    name: "Service Businesses",
-    slug: "services",
-    description: "From plumbers to cleaners — automate bookings and follow-ups.",
-    problem: "Managing schedules manually leads to double-bookings and chaos.",
-    color: "bg-amber-50 text-amber-600",
+    icon: Scale,
+    name: "Legal & Law Firms",
+    slug: "legal",
+    description: "Automate client intake, inquiry routing, and appointment scheduling to focus on billable work.",
+    problem: "Repetitive inquiries drain time from high-value legal work.",
+    color: "bg-slate-50 text-slate-600",
   },
   {
     icon: Calculator,
-    name: "Accountants",
-    slug: "accountants",
+    name: "Accounting & Tax Firms",
+    slug: "accounting",
     description: "Automate client communication during tax season and beyond.",
     problem: "Repetitive questions drain time from billable work.",
-    color: "bg-slate-50 text-slate-600",
+    color: "bg-amber-50 text-amber-600",
+  },
+  {
+    icon: Car,
+    name: "Automotive Dealerships",
+    slug: "automotive",
+    description: "Manage test drive bookings, vehicle inquiries, and service appointments automatically.",
+    problem: "Slow response times lose high-intent buyers to competitors.",
+    color: "bg-indigo-50 text-indigo-600",
+  },
+  {
+    icon: GraduationCap,
+    name: "Private Education & Training",
+    slug: "education",
+    description: "Handle enrollment inquiries, scheduling, and student communication at scale.",
+    problem: "Manual coordination limits enrollment capacity and student experience.",
+    color: "bg-orange-50 text-orange-600",
   },
 ];
 
@@ -65,7 +73,7 @@ const Solutions = () => {
               Built for Your Industry
             </h1>
             <p className="text-lg text-muted-foreground">
-              See how businesses like yours use APEX to save time, reduce costs, and grow faster.
+              See how organizations like yours use APEX to scale operations, reduce administrative load, and improve response performance.
             </p>
           </div>
         </div>
@@ -108,7 +116,7 @@ const Solutions = () => {
               Don't see your industry?
             </h2>
             <p className="text-muted-foreground mb-6">
-              APEX works for any business that handles customer conversations. Let's talk about your needs.
+              APEX works for any organization that handles client conversations. Let's talk about your needs.
             </p>
             <Button size="lg" asChild>
               <Link to="/contact">
