@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import logoDark from "@/assets/logo-dark.png";
+import logoLight from "@/assets/logo-light.png";
 
 const productItems = [
   { name: "Customer Chat & Sales", href: "/product/chat", description: "AI-powered responses across all channels" },
@@ -33,13 +33,13 @@ export function Header() {
   const isActive = (href: string) => location.pathname === href || location.pathname.startsWith(href + "/");
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[hsl(215,28%,8%)]/90 backdrop-blur-lg border-b border-[hsl(215,20%,16%)]">
       <nav className="section-container" aria-label="Global">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3">
-              <img src={logoDark} alt="APEX RoboTech" className="h-8 w-auto" />
+              <img src={logoLight} alt="APEX RoboTech" className="h-8 w-auto" />
             </Link>
           </div>
 
@@ -47,7 +47,7 @@ export function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-muted-foreground"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -65,7 +65,7 @@ export function Header() {
               <NavigationMenuList>
                 {/* Product dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                  <NavigationMenuTrigger className="nav-link-dark bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-gray-300 hover:text-white">
                     Product
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -91,7 +91,7 @@ export function Header() {
 
                 {/* Solutions dropdown */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link bg-transparent hover:bg-transparent data-[state=open]:bg-transparent">
+                  <NavigationMenuTrigger className="nav-link-dark bg-transparent hover:bg-transparent data-[state=open]:bg-transparent text-gray-300 hover:text-white">
                     Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -116,7 +116,7 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     to="/product/digital-board"
-                    className={`nav-link px-4 py-2 ${isActive("/product/digital-board") ? "nav-link-active" : ""}`}
+                    className={`px-4 py-2 text-sm font-medium transition-colors text-gray-300 hover:text-white ${isActive("/product/digital-board") ? "text-white" : ""}`}
                   >
                     Enterprise
                   </Link>
@@ -126,7 +126,7 @@ export function Header() {
                 <NavigationMenuItem>
                   <Link
                     to="/pricing"
-                    className={`nav-link px-4 py-2 ${isActive("/pricing") ? "nav-link-active" : ""}`}
+                    className={`px-4 py-2 text-sm font-medium transition-colors text-gray-300 hover:text-white ${isActive("/pricing") ? "text-white" : ""}`}
                   >
                     Pricing
                   </Link>
@@ -137,10 +137,10 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
-            <Button variant="ghost" size="sm" asChild>
+            <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10" asChild>
               <Link to="/login">Log in</Link>
             </Button>
-            <Button size="sm" asChild>
+            <Button size="sm" className="bg-gradient-to-r from-[hsl(187,85%,45%)] to-[hsl(187,85%,55%)] text-[hsl(215,28%,8%)] font-semibold shadow-md shadow-[hsl(187,85%,48%)]/20 hover:brightness-110 transition-all" asChild>
               <Link to="/pricing">Start Free Trial</Link>
             </Button>
           </div>
@@ -148,16 +148,16 @@ export function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t border-[hsl(215,20%,16%)]">
             <div className="space-y-1">
               {/* Product section */}
               <div className="px-3 py-2">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Product</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Product</p>
                 {productItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block px-3 py-2 rounded-lg text-sm text-muted-foreground hover:bg-secondary"
+                    className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-white/10"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -167,12 +167,12 @@ export function Header() {
 
               {/* Solutions section */}
               <div className="px-3 py-2">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Solutions</p>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Solutions</p>
                 {solutionItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block px-3 py-2 rounded-lg text-sm text-muted-foreground hover:bg-secondary"
+                    className="block px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-white/10"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -184,8 +184,8 @@ export function Header() {
                 to="/product/digital-board"
                 className={`block px-3 py-2 rounded-lg text-base font-medium ${
                   isActive("/product/digital-board")
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:bg-secondary"
+                    ? "bg-white/10 text-white"
+                    : "text-gray-300 hover:bg-white/10"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -195,8 +195,8 @@ export function Header() {
                 to="/pricing"
                 className={`block px-3 py-2 rounded-lg text-base font-medium ${
                   isActive("/pricing")
-                    ? "bg-accent text-accent-foreground"
-                    : "text-muted-foreground hover:bg-secondary"
+                    ? "bg-white/10 text-white"
+                    : "text-gray-300 hover:bg-white/10"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -204,10 +204,10 @@ export function Header() {
               </Link>
               
               <div className="pt-4 space-y-2 px-3">
-                <Button variant="outline" className="w-full" asChild>
+                <Button variant="outline" className="w-full border-gray-600 text-gray-300 hover:bg-white/10" asChild>
                   <Link to="/login">Log in</Link>
                 </Button>
-                <Button className="w-full" asChild>
+                <Button className="w-full bg-gradient-to-r from-[hsl(187,85%,45%)] to-[hsl(187,85%,55%)] text-[hsl(215,28%,8%)] font-semibold" asChild>
                   <Link to="/pricing">Start Free Trial</Link>
                 </Button>
               </div>
