@@ -5,27 +5,27 @@ import { ArrowRight, TrendingUp, Clock, MessageSquare, Users } from "lucide-reac
 const roiStats = [
   {
     icon: Clock,
-    value: "47 hours",
-    label: "recovered weekly",
-    description: "Average time your team gets back for high-value work.",
+    value: "Recover hours",
+    label: "every week",
+    description: "Free your team from repetitive tasks and focus on high-value work.",
   },
   {
     icon: MessageSquare,
-    value: "1,247",
-    label: "conversations/month",
-    description: "Handled automatically—without adding to your workload.",
+    value: "24/7 availability",
+    label: "across all channels",
+    description: "Your AI agents handle conversations around the clock—no gaps.",
   },
   {
     icon: TrendingUp,
-    value: "32%",
-    label: "more bookings",
-    description: "When customers can book 24/7, more of them do.",
+    value: "More bookings",
+    label: "with always-on scheduling",
+    description: "Capture more bookings with 24/7 availability and instant responses.",
   },
   {
     icon: Users,
-    value: "98%",
-    label: "satisfaction rate",
-    description: "Teams love having capacity back for meaningful work.",
+    value: "Better experience",
+    label: "for every customer",
+    description: "Improve customer satisfaction with instant, consistent responses.",
   },
 ];
 
@@ -42,10 +42,10 @@ export function ROISection() {
             Real Results
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-            The numbers speak for themselves
+            Real outcomes, not empty promises
           </h2>
           <p className="text-lg text-white/60">
-            Across 2,400+ businesses using APEX every day.
+            What businesses experience when APEX handles the repetitive work.
           </p>
         </div>
 
