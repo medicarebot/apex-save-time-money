@@ -19,7 +19,7 @@ export function ChatSection() {
             Talk to APEX AI
           </h2>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
-            Ask anything about automating your business. Get instant answers.
+            Ask anything about scaling your operations. Get instant answers.
           </p>
         </div>
         

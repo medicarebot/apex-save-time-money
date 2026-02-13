@@ -1,65 +1,83 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Scissors, Stethoscope, Building2, Wrench } from "lucide-react";
+import { ArrowRight, Stethoscope, Sparkles, Building2, Scale, Car } from "lucide-react";
 
 const industries = [
   {
-    id: "salons",
-    name: "Salons & Spas",
-    icon: Scissors,
-    headline: "Stop losing bookings to voicemail.",
-    description: "APEX books appointments 24/7, sends automated reminders to reduce no-shows, and helps you grow through reviews and referrals.",
-    outcomes: [
-      "More consistent booking flow",
-      "Reduced no-shows through automation",
-      "Improved customer satisfaction",
-    ],
-    href: "/solutions/salons",
-  },
-  {
-    id: "healthcare",
-    name: "Clinics & Healthcare",
+    id: "private-clinics",
+    name: "Private Clinics",
     icon: Stethoscope,
-    headline: "Your front desk shouldn't be your bottleneck.",
-    description: "Handle patient inquiries, appointment scheduling, and follow-ups automatically. HIPAA-ready, human when it matters.",
+    headline: "Stop losing high-value patients to slow responses.",
+    description: "APEX handles appointment scheduling, patient inquiries, pre-screening, reminders, and follow-ups — automatically and consistently across every channel.",
     outcomes: [
-      "Less time on the phone",
-      "Improved patient satisfaction",
-      "More time per patient interaction",
+      "Faster response times",
+      "Reduced no-shows through automation",
+      "Structured patient communication",
+      "Operational visibility across conversations",
     ],
-    href: "/solutions/healthcare",
+    href: "/solutions/private-clinics",
   },
   {
-    id: "realestate",
+    id: "aesthetic-clinics",
+    name: "Aesthetic Clinics",
+    icon: Sparkles,
+    headline: "Convert every consultation inquiry into a booked appointment.",
+    description: "APEX manages client inquiries, treatment consultations, appointment scheduling, and follow-up care coordination — delivering a premium client experience at scale.",
+    outcomes: [
+      "Higher consultation-to-booking rates",
+      "Automated pre-treatment communication",
+      "Consistent follow-up protocols",
+      "Reduced administrative overhead",
+    ],
+    href: "/solutions/aesthetic-clinics",
+  },
+  {
+    id: "real-estate",
     name: "Real Estate",
     icon: Building2,
     headline: "Never miss a lead. Ever.",
-    description: "Qualify leads instantly, schedule viewings automatically, and keep buyers engaged throughout their journey.",
+    description: "Qualify leads instantly, schedule viewings automatically, and keep buyers engaged throughout their journey with structured, multi-channel communication.",
     outcomes: [
       "Faster lead response times",
       "Better qualified pipeline",
       "Higher conversion through follow-up",
+      "Operational visibility across agents",
     ],
     href: "/solutions/real-estate",
   },
   {
-    id: "services",
-    name: "Service Businesses",
-    icon: Wrench,
-    headline: "Quote faster. Close more. Stress less.",
-    description: "From initial inquiry to job completion, APEX keeps customers informed and your team coordinated.",
+    id: "legal",
+    name: "Legal Firms",
+    icon: Scale,
+    headline: "Structured client intake. Zero missed inquiries.",
+    description: "APEX handles initial client inquiries, intake screening, appointment scheduling, and case status updates — freeing your team to focus on billable work.",
     outcomes: [
-      "Faster quoting and response",
-      "Stronger customer retention",
-      "Hours recovered every week",
+      "Faster client intake processing",
+      "Reduced administrative load",
+      "Consistent client communication",
+      "Improved response performance",
     ],
-    href: "/solutions/services",
+    href: "/solutions/legal",
+  },
+  {
+    id: "automotive",
+    name: "Automotive",
+    icon: Car,
+    headline: "Turn every inquiry into a showroom visit.",
+    description: "APEX manages test drive bookings, vehicle inquiries, service appointments, and follow-ups — keeping your sales pipeline structured and responsive.",
+    outcomes: [
+      "Increased showroom appointments",
+      "Automated service reminders",
+      "Structured lead qualification",
+      "Multi-channel customer engagement",
+    ],
+    href: "/solutions/automotive",
   },
 ];
 
 export function IndustrySolutionsSection() {
-  const [activeTab, setActiveTab] = useState("salons");
+  const [activeTab, setActiveTab] = useState("private-clinics");
   const activeIndustry = industries.find((i) => i.id === activeTab)!;
 
   return (
@@ -74,7 +92,7 @@ export function IndustrySolutionsSection() {
             Built for your industry
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Designed to improve operational performance
+            Designed for high-ticket, high-volume client operations
           </h2>
         </div>
 
