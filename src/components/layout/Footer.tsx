@@ -42,8 +42,8 @@ export function Footer() {
             <p className="text-sm text-background/60 max-w-xs leading-relaxed">
               The AI platform that handles customer conversations, bookings, and operations—so your team can focus on growth.
             </p>
-            <p className="text-xs text-background/40">
-              Trusted by 2,400+ businesses worldwide.
+            <p className="text-xs text-background/40 mt-2">
+              APEX AI agents support your team but do not replace professional judgment. For medical or emergency decisions, always consult qualified staff.
             </p>
           </div>
 

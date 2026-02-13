@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Check, Zap } from "lucide-react";
 
-const trustedBy = [
-  "Premium Dental",
-  "Urban Salon Group",
-  "MedCare Clinics",
-  "Elite Properties",
-  "ServicePro Network",
+const industries = [
+  "Salons & Spas",
+  "Clinics & Healthcare",
+  "Real Estate",
+  "Professional Services",
+  "Hospitality",
 ];
 
 export function HeroSection() {
@@ -53,7 +53,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" variant="hero" asChild className="group">
               <Link to="/pricing">
-                Start Free
+                Start Free Trial
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -65,32 +65,32 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-12 pb-8">
-            <div className="text-center">
-              <p className="text-2xl lg:text-3xl font-bold text-white">2,400+</p>
-              <p className="text-sm text-white/50">Active businesses</p>
+          {/* Trust signals */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 pb-8">
+            <div className="flex items-center gap-2 text-white/70">
+              <Check className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium">Live in 15 minutes</span>
             </div>
-            <div className="text-center">
-              <p className="text-2xl lg:text-3xl font-bold text-white">47hrs</p>
-              <p className="text-sm text-white/50">Recovered weekly</p>
+            <div className="flex items-center gap-2 text-white/70">
+              <Check className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium">Human handover built-in</span>
             </div>
-            <div className="text-center">
-              <p className="text-2xl lg:text-3xl font-bold text-white">&lt;2s</p>
-              <p className="text-sm text-white/50">Response time</p>
+            <div className="flex items-center gap-2 text-white/70">
+              <Check className="h-4 w-4 text-primary" />
+              <span className="text-sm font-medium">Multi-channel AI agents</span>
             </div>
           </div>
         </div>
 
-        {/* Trusted by logos - more emphasized */}
+        {/* Built for */}
         <div className="pt-8 border-t border-white/10">
           <p className="text-center text-sm font-medium text-white/60 mb-6 uppercase tracking-widest">
-            Trusted by industry leaders
+            Built for modern service businesses
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4">
-            {trustedBy.map((company) => (
-              <span key={company} className="text-white/50 font-semibold text-base tracking-wide hover:text-white/70 transition-colors">
-                {company}
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+            {industries.map((industry) => (
+              <span key={industry} className="text-white/50 font-medium text-sm tracking-wide px-4 py-1.5 rounded-full border border-white/10 bg-white/5">
+                {industry}
               </span>
             ))}
           </div>

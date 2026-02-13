@@ -32,7 +32,7 @@ export function FinalCTASection() {
               asChild
             >
               <Link to="/pricing">
-                Start Free
+                Start Free Trial
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
