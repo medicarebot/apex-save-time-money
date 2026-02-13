@@ -30,7 +30,7 @@ export function ChatSection() {
         {/* Trust signal */}
         <div className="flex items-center justify-center gap-2 mt-6 text-white/40 text-sm">
           <Sparkles className="h-4 w-4" />
-          <span>Powered by APEX AI • 2,400+ businesses trust us</span>
+          <span>Powered by APEX AI</span>
         </div>
       </div>
     </section>

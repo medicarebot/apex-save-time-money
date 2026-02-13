@@ -53,9 +53,9 @@ export function DifferentiationSection() {
             Why APEX?
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-            Not another chatbot.
+            Beyond chat.
             <br />
-            <span className="text-white/60">A complete operating system.</span>
+            <span className="text-white/60">Built for operations.</span>
           </h2>
           <p className="text-lg text-white/50 max-w-xl mx-auto">
             Most tools solve one problem. APEX handles the entire customer journey—from first message to repeat business.

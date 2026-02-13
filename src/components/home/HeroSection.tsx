@@ -23,9 +23,9 @@ export function HeroSection() {
 
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
-            Every customer conversation.
+            Every customer conversation —
             <br />
-            <span className="gradient-text">Handled instantly.</span>
+            <span className="gradient-text">structured, automated, and tracked.</span>
           </h1>
 
           {/* Subheadline */}
