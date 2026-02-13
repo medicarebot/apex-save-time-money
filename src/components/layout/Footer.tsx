@@ -3,11 +3,11 @@ import logoLight from "@/assets/logo-light.png";
 
 const footerNavigation = {
   product: [
-    { name: "Customer Chat & Sales", href: "/product/chat" },
-    { name: "Smart Scheduling", href: "/product/scheduling" },
-    { name: "Operations & Tasks", href: "/product/operations" },
-    { name: "Growth Pack", href: "/product/growth" },
-    { name: "Digital Board", href: "/product/digital-board" },
+    { name: "Communication Infrastructure", href: "/product/communication-infrastructure" },
+    { name: "Revenue Capture", href: "/product/revenue-capture" },
+    { name: "Operational Automation", href: "/product/operational-automation" },
+    { name: "Reputation & Retention", href: "/product/reputation-retention" },
+    { name: "Executive Intelligence", href: "/product/executive-intelligence" },
   ],
   industries: [
     { name: "Private Clinics & Medical Centers", href: "/solutions/private-clinics" },

@@ -13,10 +13,10 @@ import {
 import logoLight from "@/assets/logo-light.png";
 
 const productItems = [
-  { name: "Customer Chat & Sales", href: "/product/chat", description: "AI-powered responses across all channels" },
-  { name: "Smart Scheduling", href: "/product/scheduling", description: "24/7 self-service booking" },
-  { name: "Operations & Tasks", href: "/product/operations", description: "Automate internal workflows" },
-  { name: "Growth Pack", href: "/product/growth", description: "Reviews, referrals, and reputation" },
+  { name: "Communication Infrastructure", href: "/product/communication-infrastructure", description: "Structured communication across every channel" },
+  { name: "Revenue Capture", href: "/product/revenue-capture", description: "Automated scheduling that protects revenue" },
+  { name: "Operational Automation", href: "/product/operational-automation", description: "AI coordination for internal workflows" },
+  { name: "Reputation & Retention", href: "/product/reputation-retention", description: "Systemized reputation and retention management" },
 ];
 
 const industryItems = [
@@ -118,8 +118,8 @@ export function Header() {
                 {/* Enterprise */}
                 <NavigationMenuItem>
                   <Link
-                    to="/product/digital-board"
-                    className={`px-4 py-2 text-sm font-medium transition-colors text-gray-300 hover:text-white ${isActive("/product/digital-board") ? "text-white" : ""}`}
+                    to="/product/executive-intelligence"
+                    className={`px-4 py-2 text-sm font-medium transition-colors text-gray-300 hover:text-white ${isActive("/product/executive-intelligence") ? "text-white" : ""}`}
                   >
                     Enterprise
                   </Link>
@@ -184,9 +184,9 @@ export function Header() {
               </div>
               
               <Link
-                to="/product/digital-board"
+                to="/product/executive-intelligence"
                 className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                  isActive("/product/digital-board")
+                  isActive("/product/executive-intelligence")
                     ? "bg-white/10 text-white"
                     : "text-gray-300 hover:bg-white/10"
                 }`}
