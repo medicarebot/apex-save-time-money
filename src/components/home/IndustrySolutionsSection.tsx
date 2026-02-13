@@ -9,7 +9,7 @@ const industries = [
     name: "Salons & Spas",
     icon: Scissors,
     headline: "Stop losing bookings to voicemail.",
-    description: "APEX books appointments 24/7, sends reminders that reduce no-shows by 40%, and helps you grow through reviews and referrals.",
+    description: "APEX books appointments 24/7, sends automated reminders to reduce no-shows, and helps you grow through reviews and referrals.",
     outcomes: [
       "More consistent booking flow",
       "Reduced no-shows through automation",
