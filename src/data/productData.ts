@@ -1,5 +1,10 @@
 import { Calendar, MessageSquare, ClipboardCheck, Rocket, Users } from "lucide-react";
 
+export interface WhoBlock {
+  title: string;
+  description: string;
+}
+
 export interface ProductInfo {
   icon: typeof Calendar;
   name: string;
@@ -14,6 +19,7 @@ export interface ProductInfo {
   capabilities: { title: string; description: string }[];
   whoTitle: string;
   whoItems: string[];
+  whoBlocks: WhoBlock[];
   architectureFlow: { input: string; intelligence: string; outcome: string };
   primaryCta: string;
   secondaryCta: string;
@@ -45,25 +51,41 @@ export const productData: Record<string, ProductInfo> = {
     ],
     capabilitiesTitle: "Business Impact",
     capabilities: [
-      { title: "Multi-channel structured intake", description: "Every interaction logged and structured for long-term relationship visibility." },
-      { title: "Conversation memory", description: "Full context continuity across sessions, channels, and team members." },
-      { title: "Lead qualification logic", description: "AI-driven scoring and routing based on intent, urgency, and value." },
-      { title: "Automated follow-up", description: "No lead forgotten. Follow-up logic runs without manual effort." },
-      { title: "CRM synchronization", description: "Every touchpoint flows into your existing systems automatically." },
-      { title: "Human escalation", description: "Intelligent handover with full context when human judgment is needed." },
+      { title: "Operational Structure", description: "Every interaction is centralized, logged, and accessible across teams — eliminating fragmented communication." },
+      { title: "Revenue Protection", description: "Qualified leads are automatically routed and followed up without manual gaps or delays." },
+      { title: "Context Continuity", description: "Conversation memory persists across channels and sessions, ensuring no context is ever lost." },
+      { title: "Human + AI Coordination", description: "Escalation happens seamlessly with full context — not fragmented threads requiring re-explanation." },
     ],
     architectureFlow: {
       input: "Website, WhatsApp, Instagram, Email",
       intelligence: "Master Bot — Memory + Routing + Context",
       outcome: "Qualified Lead + Structured Follow-up + Escalation",
     },
-    whoTitle: "Who This Is For",
+    whoTitle: "Where response speed impacts revenue",
     whoItems: [
       "Private clinics managing patient inquiry volume across multiple channels",
       "Legal firms handling high-value consultation requests",
       "Real estate agencies responding to multi-channel property inquiries",
       "High-value service operators where response speed directly impacts revenue",
       "Multi-location businesses needing structured communication oversight",
+    ],
+    whoBlocks: [
+      {
+        title: "Private Medical & Aesthetic Clinics",
+        description: "Managing patient inquiries across multiple channels where delayed response directly impacts bookings and procedure revenue.",
+      },
+      {
+        title: "Legal & Professional Firms",
+        description: "Handling high-value consultation requests that require structured intake, qualification, and documented follow-up.",
+      },
+      {
+        title: "Real Estate & Sales-Driven Agencies",
+        description: "Operating in competitive markets where inquiry speed and structured routing determine deal conversion.",
+      },
+      {
+        title: "Multi-Location Service Operators",
+        description: "Needing centralized visibility and coordination across branches without losing local responsiveness.",
+      },
     ],
     primaryCta: "Start Free Trial",
     secondaryCta: "Request Demo",
@@ -93,24 +115,40 @@ export const productData: Record<string, ProductInfo> = {
     ],
     capabilitiesTitle: "Business Impact",
     capabilities: [
-      { title: "Multi-channel booking logic", description: "Clients book through their preferred channel — website, WhatsApp, or chat — with unified availability." },
-      { title: "Intelligent availability management", description: "Real-time calendar sync preventing conflicts and maximizing utilization." },
-      { title: "Automated confirmations", description: "Instant booking confirmation across channels without staff involvement." },
-      { title: "Reminder automation", description: "Structured reminder sequences reducing no-show rates systematically." },
-      { title: "Rescheduling workflows", description: "Self-service rescheduling that fills cancellations automatically." },
-      { title: "Revenue analytics", description: "Visibility into booking patterns, conversion rates, and capacity utilization." },
+      { title: "Revenue Continuity", description: "Booking operates around the clock — clients schedule through their preferred channel with unified availability management." },
+      { title: "No-Show Reduction", description: "Structured reminder sequences reduce missed appointments systematically, protecting operational throughput." },
+      { title: "Calendar Intelligence", description: "Real-time synchronization prevents conflicts and maximizes resource utilization across locations." },
+      { title: "Administrative Liberation", description: "Self-service rescheduling and automated confirmations free staff for higher-value client engagement." },
     ],
     architectureFlow: {
       input: "Booking Requests, Calendar Events, Client Messages",
       intelligence: "Master Bot — Availability + Confirmation + Reminders",
       outcome: "Confirmed Booking + Reduced No-Shows + Revenue Protected",
     },
-    whoTitle: "Who This Is For",
+    whoTitle: "Built for revenue-sensitive operations",
     whoItems: [
       "Medical centers with high appointment volume and costly no-shows",
       "Aesthetic clinics managing consultation and procedure scheduling",
       "Automotive dealerships scheduling service and sales appointments",
       "Any organization where scheduling gaps directly impact revenue",
+    ],
+    whoBlocks: [
+      {
+        title: "Medical Centers & Clinics",
+        description: "High appointment volume with costly no-shows requiring automated reminders, confirmations, and multi-channel booking access.",
+      },
+      {
+        title: "Aesthetic & Cosmetic Practices",
+        description: "Managing consultation and procedure scheduling where calendar coordination directly impacts procedure revenue.",
+      },
+      {
+        title: "Automotive Dealerships",
+        description: "Scheduling service appointments and sales consultations across departments with centralized availability management.",
+      },
+      {
+        title: "Professional Service Firms",
+        description: "Coordinating client meetings, consultations, and follow-ups where booking gaps directly translate to lost revenue.",
+      },
     ],
     primaryCta: "Start Free Trial",
     secondaryCta: "Request Demo",
@@ -140,24 +178,40 @@ export const productData: Record<string, ProductInfo> = {
     ],
     capabilitiesTitle: "Business Impact",
     capabilities: [
-      { title: "Internal task automation", description: "Repetitive coordination eliminated through structured workflows." },
-      { title: "Escalation logic", description: "Issues routed to the right person at the right time, automatically." },
-      { title: "Cross-team coordination", description: "Departmental handoffs structured and tracked end-to-end." },
-      { title: "Trigger-based actions", description: "Events trigger workflows without waiting for human initiation." },
-      { title: "Completion tracking", description: "Full visibility into task status, bottlenecks, and team throughput." },
-      { title: "Process optimization", description: "Data-driven insights revealing workflow inefficiencies over time." },
+      { title: "Workflow Automation", description: "Repetitive coordination eliminated through structured workflows that execute based on triggers, not manual initiation." },
+      { title: "Intelligent Escalation", description: "Issues routed to the right person at the right time — automatically, with full context and documented history." },
+      { title: "Cross-Team Coordination", description: "Departmental handoffs structured and tracked end-to-end, eliminating communication gaps between teams." },
+      { title: "Performance Visibility", description: "Full visibility into task status, bottlenecks, and team throughput with data-driven optimization insights." },
     ],
     architectureFlow: {
       input: "Tasks, Events, Team Actions",
       intelligence: "Master Bot — Routing + Triggers + Escalation",
       outcome: "Completed Tasks + Audit Trail + Performance Data",
     },
-    whoTitle: "Who This Is For",
+    whoTitle: "Designed for high-volume service operations",
     whoItems: [
       "Legal firms managing complex case workflows across teams",
       "Accounting firms coordinating client deliverables and deadlines",
       "Medical centers with multi-department operational coordination",
       "Multi-location businesses requiring structured oversight across sites",
+    ],
+    whoBlocks: [
+      {
+        title: "Legal & Law Firms",
+        description: "Managing complex case workflows across teams where task miscommunication creates costly delays and compliance risks.",
+      },
+      {
+        title: "Accounting & Tax Firms",
+        description: "Coordinating client deliverables and deadlines across multiple team members with structured handoff requirements.",
+      },
+      {
+        title: "Medical Centers",
+        description: "Multi-department operational coordination where internal process visibility directly impacts patient experience and compliance.",
+      },
+      {
+        title: "Multi-Location Operations",
+        description: "Requiring structured oversight across sites without losing operational granularity or local team accountability.",
+      },
     ],
     primaryCta: "Start Free Trial",
     secondaryCta: "Request Demo",
@@ -187,24 +241,40 @@ export const productData: Record<string, ProductInfo> = {
     ],
     capabilitiesTitle: "Business Impact",
     capabilities: [
-      { title: "Post-service automation", description: "Every completed engagement triggers structured follow-up automatically." },
-      { title: "Reputation flow automation", description: "Reviews requested at optimal moments with frictionless submission paths." },
-      { title: "Referral triggers", description: "Satisfied clients guided into referral programs without manual outreach." },
-      { title: "Structured re-engagement", description: "Dormant relationships reactivated through intelligent campaign logic." },
-      { title: "Performance tracking", description: "Clear visibility into reputation metrics, referral conversion, and retention rates." },
-      { title: "Revenue attribution", description: "Direct connection between retention activities and measurable revenue impact." },
+      { title: "Reputation Automation", description: "Reviews requested at optimal moments with frictionless submission paths — building credibility without manual effort." },
+      { title: "Referral Intelligence", description: "Satisfied clients guided into referral programs automatically, turning every positive experience into growth potential." },
+      { title: "Client Reactivation", description: "Dormant relationships reactivated through intelligent campaign logic based on engagement patterns and service history." },
+      { title: "Revenue Attribution", description: "Direct connection between retention activities and measurable revenue impact — proving ROI on every engagement." },
     ],
     architectureFlow: {
       input: "Completed Services, Client Feedback, Engagement Data",
       intelligence: "Master Bot — Timing + Triggers + Personalization",
       outcome: "Reviews + Referrals + Reactivated Revenue",
     },
-    whoTitle: "Who This Is For",
+    whoTitle: "Built for revenue-sensitive businesses",
     whoItems: [
       "Aesthetic clinics building and protecting online reputation",
       "Real estate agencies leveraging client relationships for referrals",
       "Automotive dealerships managing service reviews and repeat business",
       "Any high-value service operation investing in long-term client retention",
+    ],
+    whoBlocks: [
+      {
+        title: "Aesthetic & Cosmetic Clinics",
+        description: "Building and protecting online reputation where reviews directly influence procedure bookings and patient trust.",
+      },
+      {
+        title: "Real Estate Agencies",
+        description: "Leveraging successful transactions into referral programs that generate qualified leads from satisfied clients.",
+      },
+      {
+        title: "Automotive Dealerships",
+        description: "Managing service reviews and repeat business cycles where customer retention drives long-term dealership profitability.",
+      },
+      {
+        title: "Education & Training Providers",
+        description: "Converting satisfied students into advocates through structured referral and review programs that build enrollment pipelines.",
+      },
     ],
     primaryCta: "Start Free Trial",
     secondaryCta: "Request Demo",
@@ -234,24 +304,40 @@ export const productData: Record<string, ProductInfo> = {
     ],
     capabilitiesTitle: "Business Impact",
     capabilities: [
-      { title: "Executive dashboards", description: "Leadership-level views consolidating operational performance across all modules." },
-      { title: "Performance alerts", description: "Proactive notifications when metrics deviate from operational benchmarks." },
-      { title: "Pattern detection", description: "AI-driven identification of operational trends, risks, and opportunities." },
-      { title: "AI-powered recommendations", description: "Strategic suggestions based on cross-module data analysis." },
-      { title: "Cross-module reporting", description: "Unified reporting connecting communication, booking, and operational data." },
-      { title: "Capacity planning", description: "Data-driven insights for resource allocation and growth planning." },
+      { title: "Executive Dashboards", description: "Leadership-level views consolidating operational performance across all modules into actionable intelligence." },
+      { title: "Proactive Alerting", description: "Notifications triggered when metrics deviate from operational benchmarks — before issues escalate." },
+      { title: "Pattern Detection", description: "AI-driven identification of operational trends, risks, and opportunities across your entire operation." },
+      { title: "Strategic Recommendations", description: "Data-driven suggestions based on cross-module analysis, enabling confident resource allocation and growth planning." },
     ],
     architectureFlow: {
       input: "All Module Data, Team Activity, Client Interactions",
       intelligence: "Master Bot — Analytics + Pattern Detection + AI",
       outcome: "Executive Insights + Alerts + Strategic Recommendations",
     },
-    whoTitle: "Who This Is For",
+    whoTitle: "Designed for operational leadership",
     whoItems: [
       "C-level leaders seeking operational visibility without manual reporting",
       "Multi-location organizations needing unified performance oversight",
       "Growing firms requiring data-informed strategic decisions",
       "Enterprise teams managing complex service operations at scale",
+    ],
+    whoBlocks: [
+      {
+        title: "C-Level & Operations Leadership",
+        description: "Seeking real-time operational visibility without relying on manual reporting cycles or fragmented data sources.",
+      },
+      {
+        title: "Multi-Location Organizations",
+        description: "Needing unified performance oversight across branches with the ability to drill down into location-specific metrics.",
+      },
+      {
+        title: "Growing Service Firms",
+        description: "Requiring data-informed strategic decisions as complexity increases with scaling client volume and team size.",
+      },
+      {
+        title: "Enterprise Operations Teams",
+        description: "Managing complex service operations at scale where pattern detection and proactive alerting prevent costly inefficiencies.",
+      },
     ],
     primaryCta: "Request Executive Demo",
     secondaryCta: "Talk to Sales",
