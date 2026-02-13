@@ -30,8 +30,8 @@ const initialMessages: Message[] = [
 const quickQuestions = [
   "How does APEX work?",
   "What's the pricing?",
-  "I run a salon",
-  "I run a clinic",
+  "Book a consultation",
+  "I need human support",
 ];
 
 export function AIChatWidget() {
@@ -61,15 +61,19 @@ export function AIChatWidget() {
       if (lowerMessage.includes("pricing") || lowerMessage.includes("cost") || lowerMessage.includes("price")) {
         response = "Great question! Our self-service AI agents start from **49,990 Ft/month** with no setup fees. You only pay for what you use with our credit system. Would you like me to help you estimate costs for your specific business, or would you prefer to talk to our team?";
       } else if (lowerMessage.includes("salon") || lowerMessage.includes("spa") || lowerMessage.includes("hair")) {
-        response = "Perfect! Salons love APEX because we handle **24/7 booking, automatic reminders** (40% fewer no-shows!), and review collection. Most salons recover 10+ hours per week. Want me to show you how a typical salon setup works?";
+        response = "Salons use APEX for **24/7 booking, automated reminders**, and review collection. Your team stays focused on clients while APEX handles scheduling and follow-ups. Want me to walk you through a typical salon setup?";
       } else if (lowerMessage.includes("clinic") || lowerMessage.includes("doctor") || lowerMessage.includes("health") || lowerMessage.includes("medical")) {
-        response = "Healthcare is one of our specialties. APEX handles **patient inquiries, appointment scheduling, and follow-ups**—with full HIPAA readiness and human handover when needed. Your staff focuses on care, not admin. Should I explain our healthcare-specific features?";
+        response = "APEX handles **patient inquiries, appointment scheduling, and follow-ups** with HIPAA-ready infrastructure and human handover when needed. Your staff focuses on care, not admin. Should I explain our healthcare-specific features?";
       } else if (lowerMessage.includes("how") && lowerMessage.includes("work")) {
         response = "APEX deploys AI agents across your communication channels—**website chat, WhatsApp, Instagram, email**—all connected to a central brain that remembers every conversation. Your customers get instant responses 24/7, and your team only handles what truly needs a human. Want to see a demo?";
+      } else if (lowerMessage.includes("book") || lowerMessage.includes("consultation") || lowerMessage.includes("demo")) {
+        response = "I can help arrange that. Our team is available for a guided walkthrough of APEX tailored to your business. You can **book a consultation directly** through our contact page, or I can answer specific questions here first. What would you prefer?";
+      } else if (lowerMessage.includes("human") || lowerMessage.includes("support") || lowerMessage.includes("person") || lowerMessage.includes("agent")) {
+        response = "Of course. APEX always includes **human handover** — you're never stuck with AI alone. I'm connecting you to our team now. In the meantime, feel free to ask me anything or visit our contact page to schedule a call directly.";
       } else if (lowerMessage.includes("enterprise") || lowerMessage.includes("large") || lowerMessage.includes("executive")) {
-        response = "For enterprise teams, we offer **Executive Command**—a strategic AI layer for leadership with company-wide visibility, decision support, and executive insights. This is tailored to your organization. I'd recommend talking directly with our enterprise team. Shall I arrange that?";
+        response = "For enterprise teams, we offer **Executive Command** — a strategic AI layer for leadership with company-wide visibility and decision support. I'd recommend speaking directly with our enterprise team. Shall I arrange that?";
       } else {
-        response = "I'd love to help you explore APEX! We work with businesses across industries—salons, clinics, real estate, service companies. What type of business do you run? That'll help me show you the most relevant features.";
+        response = "I can help you explore APEX. We work with businesses across industries — salons, clinics, real estate, and service companies. What type of business do you run? That will help me show you the most relevant capabilities.";
       }
       
       setMessages(prev => [...prev, {

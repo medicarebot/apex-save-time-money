@@ -42,7 +42,7 @@ export function ROISection() {
             Real Results
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-            Real outcomes, not empty promises
+            Focused on measurable operational improvements
           </h2>
           <p className="text-lg text-white/60">
             What businesses experience when APEX handles the repetitive work.

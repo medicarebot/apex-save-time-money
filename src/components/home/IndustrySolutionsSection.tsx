@@ -10,10 +10,10 @@ const industries = [
     icon: Scissors,
     headline: "Stop losing bookings to voicemail.",
     description: "APEX books appointments 24/7, sends reminders that reduce no-shows by 40%, and helps you grow through reviews and referrals.",
-    metrics: [
-      { value: "32%", label: "More bookings" },
-      { value: "40%", label: "Fewer no-shows" },
-      { value: "4.8★", label: "Avg rating boost" },
+    outcomes: [
+      "More consistent booking flow",
+      "Reduced no-shows through automation",
+      "Improved customer satisfaction",
     ],
     href: "/solutions/salons",
   },
@@ -23,10 +23,10 @@ const industries = [
     icon: Stethoscope,
     headline: "Your front desk shouldn't be your bottleneck.",
     description: "Handle patient inquiries, appointment scheduling, and follow-ups automatically. HIPAA-ready, human when it matters.",
-    metrics: [
-      { value: "67%", label: "Less phone time" },
-      { value: "89%", label: "Patient satisfaction" },
-      { value: "15min", label: "Saved per patient" },
+    outcomes: [
+      "Less time on the phone",
+      "Improved patient satisfaction",
+      "More time per patient interaction",
     ],
     href: "/solutions/healthcare",
   },
@@ -36,10 +36,10 @@ const industries = [
     icon: Building2,
     headline: "Never miss a lead. Ever.",
     description: "Qualify leads instantly, schedule viewings automatically, and keep buyers engaged throughout their journey.",
-    metrics: [
-      { value: "3x", label: "Faster response" },
-      { value: "45%", label: "More qualified leads" },
-      { value: "28%", label: "Higher conversion" },
+    outcomes: [
+      "Faster lead response times",
+      "Better qualified pipeline",
+      "Higher conversion through follow-up",
     ],
     href: "/solutions/real-estate",
   },
@@ -49,10 +49,10 @@ const industries = [
     icon: Wrench,
     headline: "Quote faster. Close more. Stress less.",
     description: "From initial inquiry to job completion, APEX keeps customers informed and your team coordinated.",
-    metrics: [
-      { value: "50%", label: "Faster quotes" },
-      { value: "35%", label: "More repeat customers" },
-      { value: "12hrs", label: "Saved weekly" },
+    outcomes: [
+      "Faster quoting and response",
+      "Stronger customer retention",
+      "Hours recovered every week",
     ],
     href: "/solutions/services",
   },
@@ -74,7 +74,7 @@ export function IndustrySolutionsSection() {
             Built for your industry
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Results that speak for themselves
+            Designed to improve operational performance
           </h2>
         </div>
 
@@ -116,12 +116,12 @@ export function IndustrySolutionsSection() {
                 </Button>
               </div>
 
-              {/* Metrics */}
-              <div className="grid grid-cols-3 gap-4">
-                {activeIndustry.metrics.map((metric) => (
-                  <div key={metric.label} className="text-center p-4 bg-primary/10 border border-primary/20 rounded-xl">
-                    <p className="text-2xl lg:text-3xl font-bold text-primary">{metric.value}</p>
-                    <p className="text-xs text-white/50 mt-1">{metric.label}</p>
+              {/* Outcomes */}
+              <div className="space-y-3">
+                {activeIndustry.outcomes.map((outcome) => (
+                  <div key={outcome} className="flex items-center gap-3 p-4 bg-primary/10 border border-primary/20 rounded-xl">
+                    <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    <p className="text-sm font-medium text-white">{outcome}</p>
                   </div>
                 ))}
               </div>
