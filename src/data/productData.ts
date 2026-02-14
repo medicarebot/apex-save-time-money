@@ -15,12 +15,15 @@ export interface ProductInfo {
   problems: string[];
   afterTitle: string;
   afterItems: string[];
+  executiveClarity?: { title: string; blocks: { title: string; description: string }[] };
   capabilitiesTitle: string;
   capabilities: { title: string; description: string }[];
   whoTitle: string;
   whoItems: string[];
   whoBlocks: WhoBlock[];
   architectureFlow: { input: string; intelligence: string; outcome: string };
+  infrastructureCharacteristics?: string[];
+  stabilitySection?: { title: string; intro: string; points: string[] };
   primaryCta: string;
   secondaryCta: string;
   finalHeadline: string;
@@ -32,9 +35,9 @@ export const productData: Record<string, ProductInfo> = {
   "communication-infrastructure": {
     icon: MessageSquare,
     name: "Communication Infrastructure",
-    tagline: "Structured communication across every channel",
-    headline: "Structured communication across every channel.",
-    subtext: "APEX centralizes, qualifies, and routes every customer interaction — across website, WhatsApp, Instagram, and email — ensuring no inquiry is lost and every response is operationally structured.",
+    tagline: "Revenue-grade operational infrastructure",
+    headline: "Centralized communication infrastructure for revenue-driven teams.",
+    subtext: "APEX eliminates fragmented customer communication across website, WhatsApp, Instagram, and email — structuring intake, qualification, routing, and follow-up into one unified operational layer.",
     problemTitle: "The Operational Risk",
     problems: [
       "Revenue leakage from untracked inquiries across fragmented channels",
@@ -49,6 +52,15 @@ export const productData: Record<string, ProductInfo> = {
       "Structured follow-up sequences that run without manual effort",
       "Seamless human handover with complete conversation history",
     ],
+    executiveClarity: {
+      title: "Executive-Level Visibility & Control",
+      blocks: [
+        { title: "Audit & Logging", description: "Every inquiry, response, and escalation is logged with timestamped traceability." },
+        { title: "Operational Accountability", description: "No lost leads. No untracked messages. Every interaction has ownership." },
+        { title: "Structured Intake Framework", description: "Custom logic ensures inquiries are categorized, prioritized, and routed correctly." },
+        { title: "Revenue Continuity", description: "Speed and structure prevent revenue leakage caused by delayed response." },
+      ],
+    },
     capabilitiesTitle: "Business Impact",
     capabilities: [
       { title: "Operational Structure", description: "Every interaction is centralized, logged, and accessible across teams — eliminating fragmented communication." },
@@ -61,35 +73,46 @@ export const productData: Record<string, ProductInfo> = {
       intelligence: "Master Bot — Memory + Routing + Context",
       outcome: "Qualified Lead + Structured Follow-up + Escalation",
     },
-    whoTitle: "Where response speed impacts revenue",
-    whoItems: [
-      "Private clinics managing patient inquiry volume across multiple channels",
-      "Legal firms handling high-value consultation requests",
-      "Real estate agencies responding to multi-channel property inquiries",
-      "High-value service operators where response speed directly impacts revenue",
-      "Multi-location businesses needing structured communication oversight",
+    infrastructureCharacteristics: [
+      "CRM synchronization",
+      "Persistent conversation memory",
+      "Multi-location routing logic",
+      "Secure data handling framework",
+      "Structured escalation controls",
     ],
+    whoTitle: "Where Structured Communication Directly Impacts Revenue",
+    whoItems: [],
     whoBlocks: [
       {
         title: "Private Medical & Aesthetic Clinics",
-        description: "Managing patient inquiries across multiple channels where delayed response directly impacts bookings and procedure revenue.",
+        description: "Missed or delayed responses directly reduce bookings and procedure revenue.",
       },
       {
         title: "Legal & Professional Firms",
-        description: "Handling high-value consultation requests that require structured intake, qualification, and documented follow-up.",
+        description: "High-value consultation inquiries require structured intake and documented follow-up.",
       },
       {
-        title: "Real Estate & Sales-Driven Agencies",
-        description: "Operating in competitive markets where inquiry speed and structured routing determine deal conversion.",
+        title: "Real Estate & Sales Agencies",
+        description: "Response speed and routing determine deal conversion in competitive markets.",
       },
       {
-        title: "Multi-Location Service Operators",
-        description: "Needing centralized visibility and coordination across branches without losing local responsiveness.",
+        title: "Multi-Location Operators",
+        description: "Centralized oversight without losing local responsiveness.",
       },
     ],
+    stabilitySection: {
+      title: "Built for Operational Stability",
+      intro: "APEX is not a chatbot plugin. It is structured communication infrastructure designed to support:",
+      points: [
+        "High-volume inquiry environments",
+        "Revenue-sensitive response cycles",
+        "Multi-channel intake",
+        "Teams requiring visibility and accountability",
+      ],
+    },
     primaryCta: "Start Free Trial",
     secondaryCta: "Request Demo",
-    finalHeadline: "Build operational capacity without expanding headcount.",
+    finalHeadline: "Build structured operational capacity without expanding headcount.",
     price: "From 49,990 Ft",
     priceNote: "+ VAT / month",
   },
