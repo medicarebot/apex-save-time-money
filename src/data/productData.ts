@@ -73,7 +73,7 @@ export const productData: Record<string, ProductInfo> = {
     ],
     operationalScenario: {
       headline: "A Typical Revenue-Sensitive Environment",
-      intro: "A private clinic receives 40–70 inquiries daily across website forms, WhatsApp, Instagram, and email.",
+      intro: "Example: A private clinic may receive 40–70 inquiries daily across website forms, WhatsApp, Instagram, and email.",
       withoutTitle: "Without structured routing:",
       withoutItems: [
         "Messages are answered at inconsistent intervals",
@@ -108,7 +108,7 @@ export const productData: Record<string, ProductInfo> = {
     capabilities: [
       { title: "Persistent Conversation Memory", description: "Full context retained across sessions and channels." },
       { title: "Intelligent Routing Framework", description: "Automatically directs inquiries to the correct person, branch, or workflow." },
-      { title: "CRM Synchronization", description: "Structured data can sync into your CRM via integration." },
+      { title: "CRM Synchronization", description: "Captured in APEX CRM. External CRM integration available." },
       { title: "Structured Escalation", description: "Human handover with full history and timestamped traceability." },
       { title: "Multi-Location Logic", description: "Built for distributed teams and multi-branch operations." },
       { title: "Secure Data Handling", description: "Security-conscious handling designed for compliance-sensitive operations." },
