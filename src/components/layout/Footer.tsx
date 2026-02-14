@@ -125,9 +125,9 @@ export function Footer() {
             &copy; {new Date().getFullYear()} APEX RoboTech. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs text-background/40">
-            <span>SOC 2 Type II</span>
-            <span>HIPAA Ready</span>
-            <span>GDPR Compliant</span>
+            <span>Security-Conscious Design</span>
+            <span>Audit-Friendly Logging</span>
+            <span>Data Privacy Controls</span>
           </div>
         </div>
       </div>

@@ -30,9 +30,15 @@ const ProductDetail = () => {
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[hsl(var(--hero-text))] mb-8 leading-[1.08]">
               {product.headline}
             </h1>
-            <p className="text-lg lg:text-xl text-[hsl(var(--hero-text-muted))] mb-14 leading-relaxed max-w-2xl">
+            <p className="text-lg lg:text-xl text-[hsl(var(--hero-text-muted))] mb-6 leading-relaxed max-w-2xl">
               {product.subtext}
             </p>
+            {product.heroExtra && (
+              <p className="text-base text-primary font-medium mb-14">
+                {product.heroExtra}
+              </p>
+            )}
+            {!product.heroExtra && <div className="mb-14" />}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <Link to="/contact">
@@ -140,6 +146,37 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* HOW IT WORKS / SAAS CLARITY (conditional) */}
+      {product.saasClarity && (
+        <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 7%)" }}>
+          <div className="section-container">
+            <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-[hsl(var(--hero-text))] mb-6">
+              {product.saasClarity.headline}
+            </h2>
+            <p className="text-[hsl(var(--hero-text-muted))] mb-12 text-lg leading-relaxed">
+              APEX operates as a subscription-based communication layer:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {product.saasClarity.steps.map((step, i) => (
+                <div
+                  key={step}
+                  className="p-6 rounded-2xl"
+                  style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 16%)" }}
+                >
+                  <span className="text-primary font-bold text-2xl mb-3 block">{i + 1}</span>
+                  <p className="text-[hsl(var(--hero-text))] text-sm leading-relaxed">{step}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-1">
+              {product.saasClarity.closing.map((line) => (
+                <p key={line} className="text-primary font-medium text-base">{line}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* GOVERNANCE / CAPABILITIES */}
       <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 6%)" }}>
         <div className="section-container">
@@ -158,6 +195,37 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* SECURITY & PRIVACY POSTURE (conditional) */}
+      {product.securityPosture && (
+        <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 8%)" }}>
+          <div className="section-container">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+                  <Shield className="h-5 w-5 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-[hsl(var(--hero-text))]">
+                  {product.securityPosture.title}
+                </h2>
+              </div>
+              <p className="text-[hsl(var(--hero-text-muted))] leading-relaxed text-lg mb-10">
+                {product.securityPosture.intro}
+              </p>
+              <ul className="space-y-5">
+                {product.securityPosture.points.map((point) => (
+                  <li key={point} className="flex items-start gap-4">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+                      <Check className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-[hsl(var(--hero-text))] leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SYSTEM ARCHITECTURE */}
       <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 8%)" }}>
@@ -205,8 +273,39 @@ const ProductDetail = () => {
               </div>
             ))}
           </div>
+          {product.whoClosing && (
+            <p className="text-primary font-medium mt-10 text-lg">{product.whoClosing}</p>
+          )}
         </div>
       </section>
+
+      {/* STABILITY SECTION (conditional) */}
+      {product.stabilitySection && (
+        <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 8%)" }}>
+          <div className="section-container">
+            <div className="max-w-3xl">
+              <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-[hsl(var(--hero-text))] mb-6">
+                {product.stabilitySection.title}
+              </h2>
+              {product.stabilitySection.intro.split('\n').map((line) => (
+                <p key={line} className="text-[hsl(var(--hero-text-muted))] leading-relaxed text-lg mb-2">{line}</p>
+              ))}
+              {product.stabilitySection.points.length > 0 && (
+                <ul className="mt-8 space-y-4">
+                  {product.stabilitySection.points.map((point) => (
+                    <li key={point} className="flex items-start gap-4">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+                        <Check className="h-3 w-3 text-primary" />
+                      </div>
+                      <span className="text-[hsl(var(--hero-text))] leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SYSTEM CONNECTION */}
       <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 8%)" }}>
