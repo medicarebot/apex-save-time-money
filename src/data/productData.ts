@@ -5,6 +5,16 @@ export interface WhoBlock {
   description: string;
 }
 
+export interface OperationalScenario {
+  headline: string;
+  intro: string;
+  withoutTitle: string;
+  withoutItems: string[];
+  withTitle: string;
+  withItems: string[];
+  closing: string;
+}
+
 export interface ProductInfo {
   icon: typeof Calendar;
   name: string;
@@ -16,6 +26,7 @@ export interface ProductInfo {
   afterTitle: string;
   afterItems: string[];
   executiveClarity?: { title: string; blocks: { title: string; description: string }[] };
+  operationalScenario?: OperationalScenario;
   capabilitiesTitle: string;
   capabilities: { title: string; description: string }[];
   whoTitle: string;
@@ -27,6 +38,7 @@ export interface ProductInfo {
   primaryCta: string;
   secondaryCta: string;
   finalHeadline: string;
+  finalSubtext?: string;
   price: string;
   priceNote: string;
 }
@@ -36,83 +48,80 @@ export const productData: Record<string, ProductInfo> = {
     icon: MessageSquare,
     name: "Communication Infrastructure",
     tagline: "Revenue-grade operational infrastructure",
-    headline: "Centralized communication infrastructure for revenue-driven teams.",
-    subtext: "APEX eliminates fragmented customer communication across website, WhatsApp, Instagram, and email — structuring intake, qualification, routing, and follow-up into one unified operational layer.",
-    problemTitle: "The Operational Risk",
+    headline: "Revenue-Grade Communication Infrastructure",
+    subtext: "APEX centralizes, structures, and governs every inbound inquiry across website, WhatsApp, Instagram, and email — transforming fragmented conversations into controlled operational flow.",
+    problemTitle: "Where Revenue Is Quietly Lost",
     problems: [
-      "Revenue leakage from untracked inquiries across fragmented channels",
-      "Inconsistent response times eroding client trust and conversion rates",
-      "No structured tracking or memory across customer conversations",
-      "Qualified leads lost due to delayed or missing follow-up",
+      "Inquiries arriving across multiple channels without structured routing",
+      "Delayed responses reducing conversion probability",
+      "No centralized logging or accountability",
+      "Lost follow-ups due to manual handling gaps",
     ],
-    afterTitle: "After APEX Implementation",
+    afterTitle: "What Structured Communication Looks Like",
     afterItems: [
-      "Centralized communication across all channels with full context",
-      "Automated qualification and intelligent routing within seconds",
-      "Structured follow-up sequences that run without manual effort",
-      "Seamless human handover with complete conversation history",
+      "All inquiries centralized and timestamped",
+      "Automated qualification logic applied instantly",
+      "Intelligent routing to correct department or location",
+      "Follow-up sequences executed without manual dependency",
+      "Escalation with full historical context",
     ],
-    executiveClarity: {
-      title: "Executive-Level Visibility & Control",
-      blocks: [
-        { title: "Audit & Logging", description: "Every inquiry, response, and escalation is logged with timestamped traceability." },
-        { title: "Operational Accountability", description: "No lost leads. No untracked messages. Every interaction has ownership." },
-        { title: "Structured Intake Framework", description: "Custom logic ensures inquiries are categorized, prioritized, and routed correctly." },
-        { title: "Revenue Continuity", description: "Speed and structure prevent revenue leakage caused by delayed response." },
+    operationalScenario: {
+      headline: "A Typical Revenue-Sensitive Environment",
+      intro: "A private clinic receives 40–70 inquiries daily across website forms, WhatsApp, Instagram, and email.",
+      withoutTitle: "Without structured routing:",
+      withoutItems: [
+        "Messages are answered at inconsistent intervals",
+        "Some inquiries are delayed or overlooked",
+        "No unified visibility across teams",
       ],
+      withTitle: "With APEX:",
+      withItems: [
+        "Every inquiry is logged in real time",
+        "Intent is classified automatically",
+        "Urgent requests are prioritized",
+        "Follow-up logic activates automatically",
+        "Management maintains full oversight",
+      ],
+      closing: "Revenue continuity becomes controlled — not reactive.",
     },
-    capabilitiesTitle: "Business Impact",
+    capabilitiesTitle: "Infrastructure Characteristics",
     capabilities: [
-      { title: "Operational Structure", description: "Every interaction is centralized, logged, and accessible across teams — eliminating fragmented communication." },
-      { title: "Revenue Protection", description: "Qualified leads are automatically routed and followed up without manual gaps or delays." },
-      { title: "Context Continuity", description: "Conversation memory persists across channels and sessions, ensuring no context is ever lost." },
-      { title: "Human + AI Coordination", description: "Escalation happens seamlessly with full context — not fragmented threads requiring re-explanation." },
+      { title: "Persistent Conversation Memory", description: "Full context retained across sessions and channels — no repeated explanations." },
+      { title: "CRM Synchronization Framework", description: "Every interaction synchronized with your CRM for unified relationship visibility." },
+      { title: "Multi-Location Routing Logic", description: "Inquiries routed to the correct branch, department, or specialist automatically." },
+      { title: "Structured Intake Categorization", description: "Custom logic ensures inquiries are categorized, prioritized, and routed correctly." },
+      { title: "Escalation Controls with Audit Trail", description: "Human handover happens with full context and timestamped traceability." },
+      { title: "Secure Data Handling Environment", description: "Enterprise-grade data protection across all communication channels." },
     ],
     architectureFlow: {
       input: "Website, WhatsApp, Instagram, Email",
       intelligence: "Master Bot — Memory + Routing + Context",
       outcome: "Qualified Lead + Structured Follow-up + Escalation",
     },
-    infrastructureCharacteristics: [
-      "CRM synchronization",
-      "Persistent conversation memory",
-      "Multi-location routing logic",
-      "Secure data handling framework",
-      "Structured escalation controls",
-    ],
-    whoTitle: "Where Structured Communication Directly Impacts Revenue",
+    whoTitle: "Where Response Structure Directly Impacts Revenue",
     whoItems: [],
     whoBlocks: [
       {
         title: "Private Medical & Aesthetic Clinics",
-        description: "Missed or delayed responses directly reduce bookings and procedure revenue.",
+        description: "High-value procedures depend on structured inquiry intake and response speed.",
       },
       {
         title: "Legal & Professional Firms",
-        description: "High-value consultation inquiries require structured intake and documented follow-up.",
+        description: "Consultation requests require documented qualification and routing discipline.",
       },
       {
         title: "Real Estate & Sales Agencies",
-        description: "Response speed and routing determine deal conversion in competitive markets.",
+        description: "Inquiry speed and routing precision determine conversion outcomes.",
       },
       {
         title: "Multi-Location Operators",
-        description: "Centralized oversight without losing local responsiveness.",
+        description: "Centralized oversight without sacrificing branch-level responsiveness.",
       },
     ],
-    stabilitySection: {
-      title: "Built for Operational Stability",
-      intro: "APEX is not a chatbot plugin. It is structured communication infrastructure designed to support:",
-      points: [
-        "High-volume inquiry environments",
-        "Revenue-sensitive response cycles",
-        "Multi-channel intake",
-        "Teams requiring visibility and accountability",
-      ],
-    },
-    primaryCta: "Start Free Trial",
-    secondaryCta: "Request Demo",
-    finalHeadline: "Build structured operational capacity without expanding headcount.",
+    primaryCta: "Request Strategic Demo",
+    secondaryCta: "Start Free Trial",
+    finalHeadline: "Build Structured Operational Capacity",
+    finalSubtext: "Deploy communication infrastructure that protects revenue without expanding headcount.",
     price: "From 49,990 Ft",
     priceNote: "+ VAT / month",
   },
