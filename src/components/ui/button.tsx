@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Hero section variants
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl glow-primary",
-        heroOutline: "border-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50",
+        heroOutline: "border-2 border-[hsl(0_0%_100%/0.3)] bg-transparent text-white hover:bg-[hsl(0_0%_100%/0.1)] hover:border-[hsl(0_0%_100%/0.5)]",
         // Pricing CTA
         pricing: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg w-full",
         pricingOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground w-full",
