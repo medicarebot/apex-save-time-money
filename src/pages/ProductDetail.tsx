@@ -222,6 +222,9 @@ const ProductDetail = () => {
                   </li>
                 ))}
               </ul>
+              <p className="text-xs text-[hsl(var(--hero-text-muted))] mt-8 opacity-60">
+                Compliance depends on configuration and customer processes. Security details available on request.
+              </p>
             </div>
           </div>
         </section>
