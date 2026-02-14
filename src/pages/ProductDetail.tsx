@@ -154,7 +154,9 @@ const ProductDetail = () => {
               {product.saasClarity.headline}
             </h2>
             <p className="text-[hsl(var(--hero-text-muted))] mb-12 text-lg leading-relaxed">
-              APEX operates as a subscription-based communication layer:
+              {slug === "communication-infrastructure"
+                ? "APEX operates as a subscription-based communication layer:"
+                : "APEX operates as a subscription-based scheduling layer:"}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {product.saasClarity.steps.map((step, i) => (
@@ -237,7 +239,7 @@ const ProductDetail = () => {
             System Architecture
           </h2>
           <p className="text-[hsl(var(--hero-text-muted))] text-center mb-16 max-w-xl mx-auto leading-relaxed">
-            How data flows through the APEX intelligence layer.
+            How {slug === "revenue-capture" ? "scheduling flows" : "data flows"} through the APEX intelligence layer.
           </p>
           <div className="max-w-3xl mx-auto">
             <div className="flex flex-col items-center gap-5">
