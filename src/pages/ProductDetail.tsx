@@ -234,11 +234,11 @@ const ProductDetail = () => {
       <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 6%)" }}>
         <div className="section-container">
           <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-[hsl(var(--hero-text))] mb-16">{product.capabilitiesTitle}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className={`grid grid-cols-1 md:grid-cols-2 ${isEnterprise ? "" : "lg:grid-cols-3"} gap-8`}>
             {product.capabilities.map((cap) => (
               <div
                 key={cap.title}
-                className="p-8 rounded-2xl"
+                className={`rounded-2xl ${isEnterprise ? "p-10" : "p-8"}`}
                 style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 16%)" }}
               >
                 <h3 className="font-semibold text-[hsl(var(--hero-text))] mb-3">{cap.title}</h3>
