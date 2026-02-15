@@ -158,6 +158,8 @@ const ProductDetail = () => {
                 ? "APEX operates as a subscription-based communication layer:"
                 : slug === "operational-automation"
                 ? "APEX operates as a subscription-based operational coordination layer:"
+                : slug === "reputation-retention"
+                ? "APEX operates as a subscription-based reputation and retention layer:"
                 : "APEX operates as a subscription-based scheduling layer:"}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -246,7 +248,7 @@ const ProductDetail = () => {
             System Architecture
           </h2>
           <p className="text-[hsl(var(--hero-text-muted))] text-center mb-16 max-w-xl mx-auto leading-relaxed">
-            How {slug === "revenue-capture" ? "scheduling flows" : slug === "operational-automation" ? "execution flows" : "data flows"} through the APEX intelligence layer.
+            How {slug === "revenue-capture" ? "scheduling flows" : slug === "operational-automation" ? "execution flows" : slug === "reputation-retention" ? "retention flows" : "data flows"} through the APEX intelligence layer.
           </p>
           <div className="max-w-3xl mx-auto">
             <div className="flex flex-col items-center gap-5">
