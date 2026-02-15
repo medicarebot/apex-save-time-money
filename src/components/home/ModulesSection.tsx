@@ -13,11 +13,11 @@ import {
 } from "lucide-react";
 
 const channelAgents = [
-  { name: "Website Chat", icon: Globe, price: "49,990 Ft" },
-  { name: "WhatsApp", icon: Smartphone, price: "59,990 Ft" },
-  { name: "Instagram DM", icon: Instagram, price: "59,990 Ft" },
-  { name: "Email Agent", icon: Mail, price: "69,990 Ft" },
-  { name: "Booking Agent", icon: Calendar, price: "9,990 Ft" },
+  { name: "Website Chat", icon: Globe, price: "49,990 Ft", subtitle: "" },
+  { name: "WhatsApp", icon: Smartphone, price: "59,990 Ft", subtitle: "" },
+  { name: "Instagram DM", icon: Instagram, price: "59,990 Ft", subtitle: "" },
+  { name: "Email Agent", icon: Mail, price: "69,990 Ft", subtitle: "" },
+  { name: "Booking Agent", icon: Calendar, price: "9,990 Ft", subtitle: "Scheduling + reminders (Lite)" },
 ];
 
 export function ModulesSection() {
@@ -63,6 +63,7 @@ export function ModulesSection() {
                 </div>
                 <p className="font-medium text-sm text-white mb-1">{agent.name}</p>
                 <p className="text-xs text-white/50">from {agent.price}</p>
+                {agent.subtitle && <p className="text-xs text-white/30 mt-0.5">{agent.subtitle}</p>}
               </div>
             ))}
           </div>
@@ -129,7 +130,7 @@ export function ModulesSection() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-lg text-white">Layer 3: Executive Command</h3>
+                    <h3 className="font-semibold text-lg text-white">Layer 3: Executive Intelligence</h3>
                     <span className="text-xs px-2 py-0.5 rounded-full bg-primary/20 text-primary">Enterprise</span>
                   </div>
                   <p className="text-white/50 text-sm mb-3">

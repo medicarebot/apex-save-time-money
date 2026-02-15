@@ -5,8 +5,8 @@ import { ArrowRight, Shield, BarChart3, Users, Lock } from "lucide-react";
 const enterpriseFeatures = [
   {
     icon: Shield,
-    title: "Enterprise Security",
-    description: "SOC 2 Type II, HIPAA-ready, SSO, and custom data retention policies.",
+    title: "Enterprise Governance",
+    description: "Role-based access, audit-friendly logging, and configurable data retention policies.",
   },
   {
     icon: BarChart3,
