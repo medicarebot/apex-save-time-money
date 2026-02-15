@@ -1,12 +1,13 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, AlertTriangle, Zap, Network, ChevronDown, Shield } from "lucide-react";
+import { ArrowRight, Check, AlertTriangle, Zap, Network, ChevronDown, Shield, Crown } from "lucide-react";
 import { productData } from "@/data/productData";
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? productData[slug] : null;
+  const isEnterprise = slug === "executive-intelligence";
 
   if (!product) {
     return <Navigate to="/product" replace />;
@@ -15,9 +16,12 @@ const ProductDetail = () => {
   return (
     <Layout>
       {/* HERO */}
-      <section className="hero-gradient py-28 lg:py-40">
+      <section
+        className={`hero-gradient ${isEnterprise ? "py-36 lg:py-48" : "py-28 lg:py-40"}`}
+        style={isEnterprise ? { background: "linear-gradient(180deg, hsl(215 32% 5%) 0%, hsl(215 28% 9%) 100%)" } : undefined}
+      >
         <div className="section-container relative z-10">
-          <div className="max-w-3xl">
+          <div className={isEnterprise ? "max-w-3xl mx-auto text-center" : "max-w-3xl"}>
             <Link
               to="/product"
               className="inline-flex items-center text-sm text-[hsl(var(--hero-text-muted))] hover:text-[hsl(var(--hero-text))] mb-12 transition-colors"
@@ -27,10 +31,10 @@ const ProductDetail = () => {
             <p className="text-primary font-medium mb-5 text-sm tracking-widest uppercase">
               {product.tagline}
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[hsl(var(--hero-text))] mb-8 leading-[1.08]">
+            <h1 className={`font-bold text-[hsl(var(--hero-text))] mb-8 leading-[1.08] ${isEnterprise ? "text-4xl md:text-5xl lg:text-[4rem]" : "text-4xl md:text-5xl lg:text-[3.5rem]"}`}>
               {product.headline}
             </h1>
-            <p className="text-lg lg:text-xl text-[hsl(var(--hero-text-muted))] mb-6 leading-relaxed max-w-2xl">
+            <p className={`text-[hsl(var(--hero-text-muted))] mb-6 leading-relaxed ${isEnterprise ? "text-lg lg:text-xl max-w-2xl mx-auto" : "text-lg lg:text-xl max-w-2xl"}`}>
               {product.subtext}
             </p>
             {product.heroExtra && (
@@ -39,7 +43,7 @@ const ProductDetail = () => {
               </p>
             )}
             {!product.heroExtra && <div className="mb-14" />}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className={`flex flex-col sm:flex-row gap-4 ${isEnterprise ? "justify-center" : ""}`}>
               <Button size="lg" asChild>
                 <Link to="/contact">
                   {product.primaryCta}
@@ -146,6 +150,42 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* EXECUTIVE CLARITY / DIGITAL BOARD (conditional) */}
+      {product.executiveClarity && (
+        <section className="py-32 lg:py-40" style={{ background: "hsl(215 28% 7%)" }}>
+          <div className="section-container">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+                  <Crown className="h-5 w-5 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-3xl lg:text-[2.2rem] font-bold text-[hsl(var(--hero-text))]">
+                  {product.executiveClarity.title}
+                </h2>
+              </div>
+              <p className="text-[hsl(var(--hero-text-muted))] leading-relaxed text-lg mb-14">
+                A board-level interface that turns operational activity into structured oversight — with defined roles, clear questions, and actionable outputs.
+              </p>
+              <div className="space-y-6">
+                {product.executiveClarity.blocks.map((block) => (
+                  <div
+                    key={block.title}
+                    className="p-8 lg:p-10 rounded-2xl"
+                    style={{ background: "hsl(215 28% 10%)", border: "1px solid hsl(215 20% 16%)" }}
+                  >
+                    <h3 className="font-semibold text-lg text-[hsl(var(--hero-text))] mb-3">{block.title}</h3>
+                    <p className="text-[hsl(var(--hero-text-muted))] leading-relaxed">{block.description}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-[hsl(var(--hero-text-muted))] mt-10 opacity-60">
+                Executive Intelligence advises and governs. Operational modules execute.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* HOW IT WORKS / SAAS CLARITY (conditional) */}
       {product.saasClarity && (
         <section className="py-28 lg:py-36" style={{ background: "hsl(215 28% 7%)" }}>
@@ -160,6 +200,8 @@ const ProductDetail = () => {
                 ? "APEX operates as a subscription-based operational coordination layer:"
                 : slug === "reputation-retention"
                 ? "APEX operates as a subscription-based reputation and retention layer:"
+                : slug === "executive-intelligence"
+                ? "Executive Intelligence is activated after operational modules are running:"
                 : "APEX operates as a subscription-based scheduling layer:"}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -248,7 +290,7 @@ const ProductDetail = () => {
             System Architecture
           </h2>
           <p className="text-[hsl(var(--hero-text-muted))] text-center mb-16 max-w-xl mx-auto leading-relaxed">
-            How {slug === "revenue-capture" ? "scheduling flows" : slug === "operational-automation" ? "execution flows" : slug === "reputation-retention" ? "retention flows" : "data flows"} through the APEX intelligence layer.
+            How {slug === "revenue-capture" ? "scheduling flows" : slug === "operational-automation" ? "execution flows" : slug === "reputation-retention" ? "retention flows" : slug === "executive-intelligence" ? "executive oversight flows" : "data flows"} through the APEX intelligence layer.
           </p>
           <div className="max-w-3xl mx-auto">
             <div className="flex flex-col items-center gap-5">
