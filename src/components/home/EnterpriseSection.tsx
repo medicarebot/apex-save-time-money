@@ -42,7 +42,7 @@ export function EnterpriseSection() {
             </h2>
             <p className="text-lg text-white/60 mb-8 max-w-lg">
               APEX Enterprise gives leadership teams real-time visibility, human-in-the-loop controls, 
-              and the security infrastructure that responsible organizations require.
+              and the governance and security controls that responsible organizations require.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="hero" asChild className="group">

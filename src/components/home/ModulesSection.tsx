@@ -174,7 +174,7 @@ export function ModulesSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-white mb-2">
-                  AI Credits — Pay only for what the AI does
+                  AI Credits — Flexible AI usage as you grow
                 </h3>
                 <p className="text-white/50">
                   Credits fuel AI conversations, responses, and tasks. Every plan includes credits to get started.
