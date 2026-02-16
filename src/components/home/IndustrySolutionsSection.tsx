@@ -16,7 +16,7 @@ const industries = [
       "Structured patient communication",
       "Operational visibility across conversations",
     ],
-    href: "/solutions/private-clinics",
+    href: "/industries/private-clinics",
   },
   {
     id: "aesthetic-clinics",
@@ -30,7 +30,7 @@ const industries = [
       "Consistent follow-up protocols",
       "Reduced administrative overhead",
     ],
-    href: "/solutions/aesthetic-clinics",
+    href: "/industries/aesthetic-clinics",
   },
   {
     id: "real-estate",
@@ -44,7 +44,7 @@ const industries = [
       "Higher conversion through follow-up",
       "Operational visibility across agents",
     ],
-    href: "/solutions/real-estate",
+    href: "/industries/real-estate",
   },
   {
     id: "legal",
@@ -58,7 +58,7 @@ const industries = [
       "Consistent client communication",
       "Improved response performance",
     ],
-    href: "/solutions/legal",
+    href: "/industries/legal",
   },
   {
     id: "automotive",
@@ -72,7 +72,7 @@ const industries = [
       "Structured lead qualification",
       "Multi-channel customer engagement",
     ],
-    href: "/solutions/automotive",
+    href: "/industries/automotive",
   },
 ];
 

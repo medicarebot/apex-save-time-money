@@ -21,13 +21,13 @@ const productItems = [
 ];
 
 const industryItems = [
-  { name: "Private Clinics & Medical Centers", href: "/solutions/private-clinics" },
-  { name: "Aesthetic & Cosmetic Clinics", href: "/solutions/aesthetic-clinics" },
-  { name: "Real Estate Agencies", href: "/solutions/real-estate" },
-  { name: "Legal & Law Firms", href: "/solutions/legal" },
-  { name: "Accounting & Tax Firms", href: "/solutions/accounting" },
-  { name: "Automotive Dealerships", href: "/solutions/automotive" },
-  { name: "Private Education & Training", href: "/solutions/education" },
+  { name: "Private Clinics & Medical Centers", href: "/industries/private-clinics" },
+  { name: "Aesthetic & Cosmetic Clinics", href: "/industries/aesthetic-clinics" },
+  { name: "Real Estate Agencies", href: "/industries/real-estate" },
+  { name: "Legal & Law Firms", href: "/industries/legal" },
+  { name: "Accounting & Tax Firms", href: "/industries/accounting" },
+  { name: "Automotive Dealerships", href: "/industries/automotive" },
+  { name: "Private Education & Training", href: "/industries/education" },
 ];
 
 export function Header() {
