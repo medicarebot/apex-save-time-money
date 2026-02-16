@@ -5,27 +5,27 @@ import { ArrowRight, TrendingUp, Clock, MessageSquare, Users } from "lucide-reac
 const roiStats = [
   {
     icon: Clock,
-    value: "Recover operational hours",
-    label: "every week",
-    description: "Free your team from repetitive coordination work.",
+    value: "Faster response discipline",
+    label: "",
+    description: "Reduce delays by handling first responses consistently across channels.",
   },
   {
     icon: MessageSquare,
-    value: "24/7 structured intake",
-    label: "across all channels",
-    description: "Every inquiry logged, tracked, and routed correctly.",
+    value: "After-hours inquiry capture",
+    label: "",
+    description: "Respond and qualify inquiries even outside working hours.",
   },
   {
     icon: TrendingUp,
-    value: "Higher conversion rates",
-    label: "through faster responses",
-    description: "Faster responses increase booking and consultation rates.",
+    value: "More consistent follow-up",
+    label: "",
+    description: "Automate reminders and next steps so leads don't go cold.",
   },
   {
     icon: Users,
-    value: "Improved client experience",
-    label: "at every step",
-    description: "Consistent, professional communication at every step.",
+    value: "Clear operational visibility",
+    label: "",
+    description: "Track inquiries, handovers, and outcomes with a single view.",
   },
 ];
 
@@ -39,13 +39,13 @@ export function ROISection() {
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
-            Real Results
+            Operational Outcomes
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-            Operational performance. Measurable results.
+            Operational outcomes you can measure
           </h2>
           <p className="text-lg text-white/60">
-            What high-value service organizations experience when communication becomes structured and automated.
+            When communication becomes structured, teams typically see improvements in speed, consistency, and visibility.
           </p>
         </div>
 
@@ -60,11 +60,16 @@ export function ROISection() {
                 <stat.icon className="h-6 w-6 text-primary" />
               </div>
               <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-              <p className="text-sm font-medium text-primary mb-2">{stat.label}</p>
+              {stat.label && <p className="text-sm font-medium text-primary mb-2">{stat.label}</p>}
               <p className="text-sm text-white/50">{stat.description}</p>
             </div>
           ))}
         </div>
+
+        {/* Disclaimer */}
+        <p className="text-center text-sm text-white/40 mb-16">
+          Outcomes depend on volume, configuration, and team process.
+        </p>
 
         {/* CTA */}
         <div className="text-center">

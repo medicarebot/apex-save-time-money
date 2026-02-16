@@ -63,7 +63,7 @@ export function AIChatWidget() {
       } else if (lowerMessage.includes("legal") || lowerMessage.includes("law") || lowerMessage.includes("firm")) {
         response = "Law firms use APEX for **structured client intake, inquiry routing, appointment scheduling**, and case status updates. Your team focuses on billable work while APEX handles the administrative coordination. Want me to walk you through a typical legal firm setup?";
       } else if (lowerMessage.includes("clinic") || lowerMessage.includes("doctor") || lowerMessage.includes("health") || lowerMessage.includes("medical")) {
-        response = "APEX handles **patient inquiries, appointment scheduling, and follow-ups** with HIPAA-ready infrastructure and human handover when needed. Your staff focuses on care, not admin. Should I explain our healthcare-specific features?";
+        response = "APEX handles **patient inquiries, appointment scheduling, and follow-ups** with audit-friendly logging and human handover when needed. Your staff focuses on care, not admin. Should I explain our healthcare-specific features?";
       } else if (lowerMessage.includes("how") && lowerMessage.includes("work")) {
         response = "APEX deploys AI agents across your communication channels—**website chat, WhatsApp, Instagram, email**—all connected to a central brain that remembers every conversation. Your customers get instant responses 24/7, and your team only handles what truly needs a human. Want to see a demo?";
       } else if (lowerMessage.includes("book") || lowerMessage.includes("consultation") || lowerMessage.includes("demo")) {
