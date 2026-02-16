@@ -20,7 +20,7 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-8">
             <Zap className="h-4 w-4 text-primary" />
-            <span className="text-sm text-white/80">Efficiency and growth — without the stress.</span>
+            <span className="text-sm text-white/80">Operational communication infrastructure</span>
           </div>
 
           {/* Main headline */}
@@ -32,7 +32,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-            APEX deploys AI agents across your channels — website, WhatsApp, Instagram, and email — so no inquiry is missed, follow-ups run automatically, and your team stays focused on high-value work.
+            APEX AI agents automate first responses and follow-ups within seconds, qualify intent, and route inquiries — across your website, WhatsApp, Instagram, and email — with structured handover and full context for your team.
           </p>
 
           {/* Value props */}

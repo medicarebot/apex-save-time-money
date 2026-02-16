@@ -5,8 +5,8 @@ import { ArrowRight, Shield, BarChart3, Users, Lock } from "lucide-react";
 const enterpriseFeatures = [
   {
     icon: Shield,
-    title: "Enterprise Governance",
-    description: "Role-based access, audit-friendly logging, and configurable data retention policies.",
+    title: "Enterprise Security Posture",
+    description: "Audit-friendly logging, role-based access (where configured), and configurable data retention policies. Security details available on request.",
   },
   {
     icon: BarChart3,
