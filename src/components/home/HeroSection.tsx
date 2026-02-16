@@ -32,7 +32,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-white/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-            APEX AI agents automate first responses and follow-ups within seconds, qualify intent, and route inquiries — across your website, WhatsApp, Instagram, and email — with structured handover and full context for your team.
+            APEX AI agents handle responses and follow-ups within seconds, qualify intent, and route inquiries — across your website, WhatsApp, Instagram, and email — with structured handover and full context for your team.
           </p>
 
           {/* Value props */}
